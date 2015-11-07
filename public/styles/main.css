@@ -1,6 +1,7 @@
 html, body, #app-container {
   margin: 0;
   height: 100%;
+  font: 16px monospace;
 }
 .App {
   display: flex;
@@ -8,14 +9,22 @@ html, body, #app-container {
   flex-wrap: nowrap;
   height: 100%;
 }
-
 .Header {
   flex: 0 0 100px;
   background: #666;
 }
 .Main {
-  flex: 1 0 auto;
+  flex: 0 1 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  overflow: hidden;
   background: #CCC;
+}
+.Main-lines {
+  flex: 0 0 auto;
+  padding: 10px;
 }
 .Footer {
   flex: 0 0 100px;

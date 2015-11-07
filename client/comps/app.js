@@ -13,7 +13,9 @@ class App extends React.Component {
     return (
       <div className='App'>
         <Header />
-        <Main />
+        <Main
+          lines={props.lines}
+        />
         <Footer />
       </div>
     )
@@ -21,6 +23,7 @@ class App extends React.Component {
 }
 
 const stateToProps = state => ({
+  lines: state.lines,
   test: 'aa'
 })
 

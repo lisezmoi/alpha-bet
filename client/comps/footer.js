@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = props => (
   <div className='Footer'>
-  FOOTER
+    F
   </div>
 )
 
