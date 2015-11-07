@@ -1,0 +1,99 @@
+@import 'nib/vendor'
+@import 'nib/gradients'
+@import 'utils.styl'
+
+m = 20px // padding
+r = 1em // radius
+userColor = pink
+
+body
+  font 20px/25px Linux Libertine Mono O, DejaVu Sans Mono, monospace
+
+html, body, main
+  height 100%
+
+main, .flex-parent
+  display flex
+  flex-direction column
+  flex-wrap nowrap
+  justify-content center
+  align-content stretch
+  align-items stretch
+
+.flex-parent
+  flex-direction row
+  &.chart-letters-users
+    flex 3 0 auto
+    padding 0
+  &.letters-users
+    flex-direction column
+    flex 0 0 400px
+    padding-top 0
+    justify-content flex-start
+
+.flex-child
+  flex 1 0 auto
+  align-self auto
+  padding m
+  &.txt-stream
+    flex 1 0 auto
+    font-size 30px
+    .letter-bet
+      color red
+    .letter-blop
+      background red
+      border 5px solid red
+      border-radius r
+  &.charts
+    flex 3 0 auto
+    font-size 10px
+    background #eee
+    line-height 4vh
+  &.user-list
+    flex 0 0 auto
+    font-size 15px
+    li
+      margin-bottom 20px
+      .user-icon
+        color #555
+        background #f1f1f1
+        border 5px solid #f1f1f1
+        border-radius r
+      .letter
+        background black
+        color white
+        padding 0 0.3em
+        border 5px solid black
+        border-radius r
+      &.myself
+        .user-icon
+          background userColor
+          border 5px solid userColor
+        .letter
+          background-color red
+          border-color red
+  &.letter-list
+    flex 0 0 auto
+    padding-top 0
+    flex-wrap wrap
+    justify-content flex-start
+    align-content flex-start
+    .letter
+      cursor pointer
+      font-size 30px
+      height 1.5em
+      margin .1em
+      background #ccc
+      border-radius r
+      padding 0.3em 0.45em 0 0.45em
+      transition background-color .1s ease-out
+      &:hover
+        background userColor
+      &:active
+        background red
+      &.blank
+        color transparent
+        background transparent
+
+.letter::selection {background:transparent;}
+.letter::-moz-selection {background:transparent;}

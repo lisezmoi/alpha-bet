@@ -1,0 +1,13 @@
+{
+  "name": "alpha-bet",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "stylus": "^0.47.1",
+  "nib": "^1.0.4 ",
+  "autoprefixer-stylus":"^0.3.0",
+    "uglify-js": "^2.4.15"
+  }
+}

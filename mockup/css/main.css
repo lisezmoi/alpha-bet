@@ -1,0 +1,275 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  font: 20px/25px Linux Libertine Mono O, DejaVu Sans Mono, monospace;
+}
+html,
+body,
+main {
+  height: 100%;
+}
+main,
+.flex-parent {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: stretch;
+  align-items: stretch;
+}
+.flex-parent {
+  flex-direction: row;
+}
+.flex-parent.chart-letters-users {
+  flex: 3 0 auto;
+  padding: 0;
+}
+.flex-parent.letters-users {
+  flex-direction: column;
+  flex: 0 0 400px;
+  padding-top: 0;
+  justify-content: flex-start;
+}
+.flex-child {
+  flex: 1 0 auto;
+  align-self: auto;
+  padding: 20px;
+}
+.flex-child.txt-stream {
+  flex: 1 0 auto;
+  font-size: 30px;
+}
+.flex-child.txt-stream .letter-bet {
+  color: #f00;
+}
+.flex-child.txt-stream .letter-blop {
+  background: #f00;
+  border: 5px solid #f00;
+  -webkit-border-radius: 1em;
+  border-radius: 1em;
+}
+.flex-child.charts {
+  flex: 3 0 auto;
+  font-size: 10px;
+  background: #eee;
+  line-height: 4vh;
+}
+.flex-child.user-list {
+  flex: 0 0 auto;
+  font-size: 15px;
+}
+.flex-child.user-list li {
+  margin-bottom: 20px;
+}
+.flex-child.user-list li .user-icon {
+  color: #555;
+  background: #f1f1f1;
+  border: 5px solid #f1f1f1;
+  -webkit-border-radius: 1em;
+  border-radius: 1em;
+}
+.flex-child.user-list li .letter {
+  background: #000;
+  color: #fff;
+  padding: 0 0.3em;
+  border: 5px solid #000;
+  -webkit-border-radius: 1em;
+  border-radius: 1em;
+}
+.flex-child.user-list li.myself .user-icon {
+  background: #ffc0cb;
+  border: 5px solid #ffc0cb;
+}
+.flex-child.user-list li.myself .letter {
+  background-color: #f00;
+  border-color: #f00;
+}
+.flex-child.letter-list {
+  flex: 0 0 auto;
+  padding-top: 0;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+}
+.flex-child.letter-list .letter {
+  cursor: pointer;
+  font-size: 30px;
+  height: 1.5em;
+  margin: 0.1em;
+  background: #ccc;
+  -webkit-border-radius: 1em;
+  border-radius: 1em;
+  padding: 0.3em 0.45em 0 0.45em;
+  -moz-transition-property: background-color;
+  -o-transition-property: background-color;
+  -webkit-transition-property: background-color;
+  -ms-transition-property: background-color;
+  -webkit-transition-property: background-color;
+  -moz-transition-property: background-color;
+  -o-transition-property: background-color;
+  -ms-transition-property: background-color;
+  transition-property: background-color;
+  -moz-transition-duration: 0.1s;
+  -o-transition-duration: 0.1s;
+  -webkit-transition-duration: 0.1s;
+  -ms-transition-duration: 0.1s;
+  -webkit-transition-duration: 0.1s;
+  -moz-transition-duration: 0.1s;
+  -o-transition-duration: 0.1s;
+  -ms-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -moz-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  -webkit-transition-timing-function: ease-out;
+  -ms-transition-timing-function: ease-out;
+  -webkit-transition-timing-function: ease-out;
+  -moz-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  -ms-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.flex-child.letter-list .letter:hover {
+  background: #ffc0cb;
+}
+.flex-child.letter-list .letter:active {
+  background: #f00;
+}
+.flex-child.letter-list .letter.blank {
+  color: transparent;
+  background: transparent;
+}
+.letter::selection {
+  background: transparent;
+}
+.letter::-moz-selection {
+  background: transparent;
+}
