@@ -13,7 +13,7 @@ store.subscribe(() => {
   console.log(store.getState())
 })
 
-const socket = io.connect('http://localhost:8080/')
+const socket = io.connect()
 
 socket.on('text-line', line => {
   store.dispatch(actions.addLine(line))
