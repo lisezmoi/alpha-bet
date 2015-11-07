@@ -1,28 +1,23 @@
-* {
+html, body, #app-container {
   margin: 0;
-  padding: 0;
+  height: 100%;
+}
+.App {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  height: 100%;
 }
 
-body {
-  text-align: center;
-  overflow: hidden;
+.Header {
+  flex: 0 0 100px;
+  background: #666;
 }
-
-h2 {
-  font-family: "Merriweather", "Roboto", sans-serif;
-  margin-top: 15px;
+.Main {
+  flex: 1 0 auto;
+  background: #CCC;
 }
-h2 img {
-  width: 50px;
-  height: 50px;
-  margin-right: 10px;
-  vertical-align: middle;
-}
-
-#gw > div {
-  position: absolute;
-  top: 80px;
-  left: 0;
-  right: 0;
-  margin: auto;
+.Footer {
+  flex: 0 0 100px;
+  background: #666;
 }
