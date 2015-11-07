@@ -4,15 +4,15 @@
 
 m = 20px // padding
 r = 1em // radius
-userColor = pink
+userColor = red
 
 body
-  font 20px/25px Linux Libertine Mono O, DejaVu Sans Mono, monospace
+  font 16px/1.8em cmutl, monospace
 
-html, body, main
+html, body, main, .chart-letters-users
   height 100%
 
-main, .flex-parent
+.flex-parent
   display flex
   flex-direction column
   flex-wrap nowrap
@@ -23,35 +23,63 @@ main, .flex-parent
 .flex-parent
   flex-direction row
   &.chart-letters-users
-    flex 3 0 auto
+    flex 1 0 auto
     padding 0
   &.letters-users
     flex-direction column
-    flex 0 0 400px
-    padding-top 0
+    flex 0 0 350px
+    padding 0
     justify-content flex-start
 
 .flex-child
-  flex 1 0 auto
+  flex 1 1 auto
   align-self auto
   padding m
-  &.txt-stream
-    flex 1 0 auto
-    font-size 30px
-    .letter-bet
-      color red
-    .letter-blop
-      background red
-      border 5px solid red
-      border-radius r
-  &.charts
-    flex 3 0 auto
-    font-size 10px
-    background #eee
-    line-height 4vh
+  &.charts-text
+    position relative
+    border-right 1px solid #ccc
+    flex-direction column
+    .txt-stream
+      position absolute
+      top 0
+      left 0
+      width 100%
+      .txt-stream-inner
+        line-height 4vh
+        width 660px
+        margin 0 auto
+        white-space pre
+        .letter-bet
+          color userColor
+          box-shadow 0 0 0 0px userColor
+          transition box-shadow 0.7s ease-out
+        .letter-blop
+          background userColor
+          border 5px solid userColor
+          border-radius r
+        .last-line
+          background userColor
+          color white
+          padding 0 5px
+          position relative
+          left -5px
+          border-radius r
+          .letter-bet
+            color white
+            box-shadow 0 0 0 10px transparent
+            border-radius r
+    .chart
+      flex 1 0 auto
+      background url(../img/chart.svg) no-repeat
+      background-size 100% 100%
+      .letter
+        background userColor
+        color white
+        padding 0.1em 0.4em 0 0.4em
+        border-radius r
+
   &.user-list
-    flex 0 0 auto
-    font-size 15px
+    font-size 16px
     li
       margin-bottom 20px
       .user-icon
@@ -62,38 +90,92 @@ main, .flex-parent
       .letter
         background black
         color white
-        padding 0 0.3em
-        border 5px solid black
+        padding 0.1em 0.4em 0 0.4em
         border-radius r
       &.myself
         .user-icon
-          background userColor
-          border 5px solid userColor
+          color userColor
         .letter
-          background-color red
-          border-color red
+          background-color userColor
+          border-color userColor
   &.letter-list
     flex 0 0 auto
-    padding-top 0
     flex-wrap wrap
     justify-content flex-start
     align-content flex-start
     .letter
       cursor pointer
       font-size 30px
-      height 1.5em
+      height 1.4em
       margin .1em
       background #ccc
       border-radius r
       padding 0.3em 0.45em 0 0.45em
       transition background-color .1s ease-out
       &:hover
-        background userColor
+        background #eee
       &:active
-        background red
+        background userColor
+        color white
       &.blank
         color transparent
         background transparent
+
+.logo
+  position absolute
+  bottom m
+  right 0
+  width 100%
+  display block
+  text-align center
+  h1
+    display inline
+    font-size 20px
+    color #888
+  .about-button
+    margin-left 10px
+    cursor pointer
+    color white
+    background #aaa
+    padding 0.25em 0.45em 0 0.45em
+    border-radius r
+    font-weight bold
+    position relative
+    top -2px
+    &:hover
+      background userColor
+#about
+  transistion all 0.8s linear
+  position absolute
+  display none
+  background userColor
+  padding 20vh
+  font-size 30px
+  line-height 2.5em
+  text-align center
+  color white
+  bottom 10%
+  top 10%
+  left 10%
+  right 10%
+  .about-button
+    position absolute
+    right m
+    top 0
+    color white
+    cursor pointer
+  &.opened
+    display block
+
+h2
+  flex 0 0 auto
+  border-bottom 1px solid #ccc
+  font-size 14px
+  color #999
+  padding 0 m
+
+a
+  color inherit
 
 .letter::selection {background:transparent;}
 .letter::-moz-selection {background:transparent;}

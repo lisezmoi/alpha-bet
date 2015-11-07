@@ -2,41 +2,42 @@
 <html>
   <html lang="en">
     <meta charset=utf-8 />
-    <title>alpha-bet</title>
+    <title>Alpha Bet</title>
     <meta name="description" content="" />
     <link rel="icon" type="image/png" href="img/favicon.png">
     <meta property="og:image" content="img/icon.png" />
     <link rel="stylesheet" type="text/css" href="css/normalize.css" />
     <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" href="fonts/cmun-typewriter-light.css" />
   </head>
   <body>
     <main>
-      <div class="flex-child txt-stream" >
-         Unexpectedly and conspicuously <span class="letter-bet">b</span>eneficial to the person so descri<span class="letter-blop">b</span>
-      </div>
-      <div class="flex-child flex-parent chart-letters-users">
-        <div class="flex-child charts">
-          <pre>
-                                                                                                     x
-                                                                                                 xxxx
-                                                                                            xxxxx
-                                                                                      xxxxxx
-                                                                     xxxxxxxxxxxxxxxxx
-                                                               xxxxxx
-                                                          xxxxx
-                                                     xxxxx
-                                                 xxxx
-           x                                 xxxx
-            xx                            xxx
-              xx                 xxxxxxxxx
-                xxx        xxxxxx
-                   xxxxxxxx</pre>
+      <div class=" flex-parent chart-letters-users">
+        <div class="flex-child flex-parent charts-text">
+          <div class="logo"><h1>Alpha Bet</h1><span class="about-button">i</span></div>
+          <div class="chart"><span class="letter">B</span></div>
+          <!-- <div class="chart"><span class="letter">U</span></div>
+          <div class="chart"><span class="letter">V</span></div> -->
+          <div class="txt-stream">
+            <div class="txt-stream-inner">  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo <span class="letter-bet">b</span>eatae tempori<span class="letter-bet">b</span>use
+  um deleniti quas perferendis <span class="letter-bet">b</span>landitiis, minus, eaque atque officiis distinctio
+  quae rem accusamus cumque, dolor aliquam commodi iure. Accusantium.
+  Natus qui<span class="letter-bet">b</span>usdam ea dolorum quia odit qui aut deserunt praesentium nam officia,vo
+  luptati<span class="letter-bet">b</span>us sed numquam recusandae repellat accusamus alias rem? Pariatur dolorem
+  que veritatis delectus a quod, qui<span class="letter-bet">b</span>usdam molestias placeat, qui! Earum pariatur
+  optio commodi similique ipsa fugit, provident excepturi ex sintdeleniti, recusan
+  dae dolore tempori<span class="letter-bet">b</span>us, quo soluta odio? Repellat o<span class="letter-bet">b</span>caecati est, eligendi culpa m
+  ollitia illo quaerat neque sunt li<span class="letter-bet">b</span>ero repellendus! Unexpectedly and conspicuous
+  <span class="last-line">ly <span class="letter-bet">b</span>eneficial to the person so descri<span class="letter-bet">b</span>e the clown.</span>
+            </div>
+          </div>
         </div>
         <div class="flex-child flex-parent letters-users">
+          <h2>Click and hold on a letter to bet</h2>
           <div class="flex-child flex-parent letter-list">
             <span class="letter blank">.</span>
-            <span class="letter">A</span>
-            <span class="letter">B</span>
+            <span class="letter" data-bet="3">A</span>
+            <span class="letter" data-bet="19">B</span>
             <span class="letter">C</span>
             <span class="letter">D</span>
             <span class="letter blank">.</span>
@@ -66,19 +67,21 @@
             <span class="letter blank">.</span>
 
           </div>
+          <h2>Participants</h2>
           <div class="flex-child user-list">
             <ul>
-              <li class="myself"><span class="user-icon">凸(｀0´)凸</span> bets on <span class="letter">B</span></li>
-              <li><span class="user-icon">(╬⓪益⓪)</span> bets on <span class="letter">S</span></li>
-              <li><span class="user-icon">(; ･`д･´)​</span> bets on <span class="letter">E</span></li>
-              <li><span class="user-icon">( •̀ω•́ )σ</span> bets on <span class="letter">I</span></li>
-              <li><span class="user-icon">(o｀ﾟ皿ﾟ)</span> bets on <span class="letter">N</span></li>
+              <li class="myself"><span class="user-icon">凸(｀0´)凸</span> bets on <span class="letter">B</span> <span title="score" class="score">$100</span></li>
+              <li><span class="user-icon">(╬⓪益⓪)</span> bets on <span class="letter">S</span> <span title="score" class="score">$80</span></li>
+              <li><span class="user-icon">(; ･`д･´)​</span> bets on <span class="letter">E</span> <span title="score" class="score">$230</span></li>
+              <li><span class="user-icon">( •̀ω•́ )σ</span> bets on <span class="letter">I</span> <span title="score" class="score">$10</span></li>
+              <li><span class="user-icon">(o｀ﾟ皿ﾟ)</span> bets on <span class="letter">N</span> <span title="score" class="score">$100</span></li>
             </ul>
           </div>
 
         </div>
       </div>
     </main>
+    <div id="about">A project by <a href="http://lisezmoi.org/">Lisezmoi</a><br> for Node.js Knockout 2015 <br> <a href="https://github.com/lisezmoi/alpha-bet">Source</a> <span class="about-button">×</span></div>
   </body>
   <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
