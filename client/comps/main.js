@@ -2,7 +2,13 @@ import React from 'react'
 
 const Main = props => (
   <div className='Main'>
-  MAIN
+    <div className='Main-lines'>
+    {props.lines.map((lineObject, i) => (
+      <div key={i}>
+        {lineObject.line}
+      </div>
+    ))}
+    </div>
   </div>
 )
 

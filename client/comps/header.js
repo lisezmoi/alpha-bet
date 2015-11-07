@@ -5,7 +5,7 @@ class Header extends React.Component {
     const { props } = this
     return (
       <div className='Header'>
-      HEADER
+      H
       </div>
     )
   }
