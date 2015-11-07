@@ -130,7 +130,7 @@ table {
   box-sizing: border-box;
 }
 body {
-  font: 16px/1.8em cmutl, monospace;
+  font: 15px/1.8em anka, monospace;
 }
 html,
 body,
@@ -245,6 +245,7 @@ main,
 .flex-child.charts-text .chart .letter {
   background: #f00;
   color: #fff;
+  font-weight: bold;
   padding: 0.1em 0.4em 0 0.4em;
   -webkit-border-radius: 1em;
   border-radius: 1em;
@@ -265,7 +266,8 @@ main,
 .flex-child.user-list li .letter {
   background: #000;
   color: #fff;
-  padding: 0.1em 0.4em 0 0.4em;
+  padding: 0.1em 0.44em;
+  font-weight: bold;
   -webkit-border-radius: 1em;
   border-radius: 1em;
 }
@@ -283,6 +285,7 @@ main,
   align-content: flex-start;
 }
 .flex-child.letter-list .letter {
+  font-weight: bold;
   cursor: pointer;
   font-size: 30px;
   height: 1.4em;
@@ -290,7 +293,7 @@ main,
   background: #ccc;
   -webkit-border-radius: 1em;
   border-radius: 1em;
-  padding: 0.3em 0.45em 0 0.45em;
+  padding: 0.3em 0.4em 0 0.4em;
   -moz-transition-property: background-color;
   -o-transition-property: background-color;
   -webkit-transition-property: background-color;
@@ -347,8 +350,9 @@ main,
   margin-left: 10px;
   cursor: pointer;
   color: #fff;
+  font-size: 14px;
   background: #aaa;
-  padding: 0.25em 0.45em 0 0.45em;
+  padding: 0.25em 0.46em 0 0.4em;
   -webkit-border-radius: 1em;
   border-radius: 1em;
   font-weight: bold;
@@ -379,6 +383,7 @@ main,
   top: 0;
   color: #fff;
   cursor: pointer;
+  font-size: 60px;
 }
 #about.opened {
   display: block;

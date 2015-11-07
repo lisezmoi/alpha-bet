@@ -7,7 +7,7 @@ r = 1em // radius
 userColor = red
 
 body
-  font 16px/1.8em cmutl, monospace
+  font 15px/1.8em anka, monospace
 
 html, body, main, .chart-letters-users
   height 100%
@@ -75,6 +75,7 @@ html, body, main, .chart-letters-users
       .letter
         background userColor
         color white
+        font-weight bold
         padding 0.1em 0.4em 0 0.4em
         border-radius r
 
@@ -90,7 +91,8 @@ html, body, main, .chart-letters-users
       .letter
         background black
         color white
-        padding 0.1em 0.4em 0 0.4em
+        padding 0.1em 0.44em
+        font-weight bold
         border-radius r
       &.myself
         .user-icon
@@ -104,13 +106,14 @@ html, body, main, .chart-letters-users
     justify-content flex-start
     align-content flex-start
     .letter
+      font-weight bold
       cursor pointer
       font-size 30px
       height 1.4em
       margin .1em
       background #ccc
       border-radius r
-      padding 0.3em 0.45em 0 0.45em
+      padding 0.3em 0.40em 0 0.40em
       transition background-color .1s ease-out
       &:hover
         background #eee
@@ -136,8 +139,9 @@ html, body, main, .chart-letters-users
     margin-left 10px
     cursor pointer
     color white
+    font-size 14px
     background #aaa
-    padding 0.25em 0.45em 0 0.45em
+    padding 0.25em 0.46em 0 0.40em
     border-radius r
     font-weight bold
     position relative
@@ -164,6 +168,7 @@ html, body, main, .chart-letters-users
     top 0
     color white
     cursor pointer
+    font-size 60px
   &.opened
     display block
 
