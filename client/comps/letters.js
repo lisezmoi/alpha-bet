@@ -17,7 +17,9 @@ const Letters = props => (
           }}
           onMouseUp={() => props.onEndBet(lowChar)}
         >
-          <span>{char}</span>
+          <span
+            data-risk='12'
+            >{char}</span>
         </span>
       )
     })}

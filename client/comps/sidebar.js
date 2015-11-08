@@ -10,7 +10,7 @@ const Sidebar = props => (
       onStartBet={props.onStartBet}
       onEndBet={props.onEndBet}
     />
-  <h2 className='title-users'>Participants</h2>
+  <h2 className='title-users'>Gamblers</h2>
     <Users
       userId={props.userId}
       users={props.users}

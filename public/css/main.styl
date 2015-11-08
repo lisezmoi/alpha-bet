@@ -115,6 +115,7 @@ html, body, main, .main-in, .app-container
     width (294px / 6)
     font-size 30px
     cursor pointer
+    position relative
     span
       display block
       text-align center
@@ -124,11 +125,26 @@ html, body, main, .main-in, .app-container
       background #e1e1e1
       padding 0.3em 0.4em 0.2em 0.42em
       transition background-color .3s ease
+      &:after
+        display none
+        content attr(data-risk)
+        background #e1e1e1
+        border-radius r
+        line-height 10px
+        font-size 10px
+        padding 2px
+        position absolute
+        opacity 1
+        top 3em
+        left 3.1em
+        transition opacity .2s ease
     &:hover span
       background #eee
     &:active span
       color white
       background userColor
+      &:after
+        opacity 0
 .Letters-letter-blank
   visibility hidden
 
