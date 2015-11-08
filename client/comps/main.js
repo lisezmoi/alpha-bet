@@ -19,7 +19,9 @@ const Main = props => (
       <div key={i} dangerouslySetInnerHTML={{__html: highlight(lineObject.line,'b',['s','e','i','n'])}} />
     ))}
     </div>
-    <Logo />
+    <Logo
+      onToggleAbout={props.onToggleAbout}
+    />
   </div>
 )
 

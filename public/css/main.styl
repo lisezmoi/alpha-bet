@@ -1,4 +1,4 @@
-@import 'nib/vendor'
+// @import 'nib/vendor'
 @import 'nib/gradients'
 @import 'utils.styl'
 
@@ -9,9 +9,8 @@ userColor = red
 body
   font 15px/1.8em 'anka', monospace
 
-html, body, main, .chart-letters-users, .app-container
+html, body, main, .main-in, .app-container
   height 100%
-
 ::selection
   background transparent
 ::-moz-selection
@@ -35,7 +34,6 @@ html, body, main, .chart-letters-users, .app-container
   flex-wrap nowrap
   justify-content flex-end
   border-right 1px solid #ccc
-
 .Main-lines
   flex 0 0 auto
   width 100%
@@ -121,6 +119,32 @@ html, body, main, .chart-letters-users, .app-container
       color white
 .Letters-letter-blank
   visibility hidden
+.About
+  transition all .4s ease
+  position absolute
+  background userColor
+  padding 25vh
+  font-size 30px
+  line-height 2.5em
+  text-align center
+  color white
+  bottom 120%
+  top -170%
+  left 5%
+  right 5%
+  box-shadow 0 0px 7px #888
+  .about-button
+    position absolute
+    right m
+    top 0
+    color white
+    cursor pointer
+    font-size 60px
+.About-opened
+  bottom 10%
+  top 10%
+  left 10%
+  right 10%
 
 .Chart
   flex 1 0 auto
@@ -168,9 +192,29 @@ html, body, main, .chart-letters-users, .app-container
       .letter
         box-shadow 0 0 0 30px transparent
 
-#about
-  display none
-
+.logo
+  position absolute
+  bottom m
+  right 0
+  width 100%
+  display block
+  text-align center
+  h1
+    display inline
+    font-size 20px
+    color #888
+  .about-button
+    margin-left 10px
+    cursor pointer
+    color white
+    background #aaa
+    padding 0.25em 0.45em 0 0.45em
+    border-radius r
+    font-weight bold
+    position relative
+    top -2px
+    &:hover
+      background userColor
 
 h2
   flex 0 0 auto
