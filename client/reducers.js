@@ -1,6 +1,7 @@
 import * as actions from './action-creators'
 
 const initState = {
+  users: [],
   bets: [],
   lines: [],
   aboutOpened: false,
@@ -8,8 +9,14 @@ const initState = {
 
 export const aboutOpened = (state = initState.aboutOpened, action) => {
   if (action.type === actions.TOGGLE_ABOUT) {
-    console.log('??')
     return !state
+  }
+  return state
+}
+
+export const users = (state = initState.users, action) => {
+  if (action.type === actions.UPDATE_USERS) {
+    return action.users.slice()
   }
   return state
 }
@@ -23,7 +30,7 @@ export const lines = (state = initState.lines, action) => {
     return [...state.slice(-39), action.line]
   }
   if (action.type === actions.REPLACE_LINES) {
-    return [...action.lines.slice(-39)]
+    return action.lines.slice()
   }
   return state
 }

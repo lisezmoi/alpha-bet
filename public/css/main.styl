@@ -92,25 +92,29 @@ html, body, main, .main-in, .app-container
   justify-content flex-start
   align-content flex-start
   align-self auto
-  padding 20px
+  padding 20px 24px 20px 30px
   flex-direction row
   display flex
   font-weight bold
   align-items stretch
   & > span
-    cursor pointer
+    width (294px / 6)
     font-size 30px
-    height 1.4em
-    margin .1em
-    background #ccc
-    border-radius r
-    padding 0.3em 0.4em 0 0.42em
-    transition background-color .3s ease
-    &:hover
+    cursor pointer
+    span
+      display block
+      text-align center
+      line-height 0.9em
+      margin .1em
+      border-radius r
+      background #ccc
+      padding 0.3em 0.4em 0.2em 0.42em
+      transition background-color .3s ease
+    &:hover span
       background userColor
       color white
       transform scale(1.2)
-    &:active
+    &:active span
       animation bet 4s infinite
 .Letters-letter-blank
   visibility hidden

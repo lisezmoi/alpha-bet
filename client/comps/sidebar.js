@@ -10,7 +10,9 @@ const Sidebar = props => (
       onEndBet={props.onEndBet}
     />
     <h2>Participants</h2>
-    <Users />
+    <Users
+      users={props.users}
+    />
   </div>
 )
 

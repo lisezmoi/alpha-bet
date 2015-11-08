@@ -12,6 +12,8 @@ const app = express()
 const server = http.Server(app)
 const io = socketio(server)
 
+const users = require('./server/users')()
+
 const createPoemLines = () => {
   const poem = fs.readFileSync('poem.txt', 'utf8').split('\n')
   let index = 0
@@ -30,14 +32,20 @@ const tick = () => {
 tick()
 
 io.on('connection', socket => {
-  console.log('New user.')
+  console.log('Hi ' + socket.id)
+
+  io.emit('users', users.add(socket.id))
 
   socket.emit('text-history', history)
   socket.on('start-bet', letter => {
-    console.log('Start bet on ' + letter)
+    console.log(`${socket.id} started a bet on ${letter}`)
   })
   socket.on('end-bet', letter => {
-    console.log('End bet on ' + letter)
+    console.log(`${socket.id} ended a bet on ${letter}`)
+  })
+  socket.on('disconnect', () => {
+    console.log('Bye ' + socket.id)
+    io.emit('users', users.rm(socket.id))
   })
 })
 
