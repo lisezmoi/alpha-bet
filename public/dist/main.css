@@ -259,20 +259,25 @@ main,
   justify-content: flex-start;
   align-content: flex-start;
   align-self: auto;
-  padding: 20px;
+  padding: 20px 24px 20px 30px;
   flex-direction: row;
   display: flex;
   font-weight: bold;
   align-items: stretch;
 }
 .Letters > span {
-  cursor: pointer;
+  width: 49px;
   font-size: 30px;
-  height: 1.4em;
+  cursor: pointer;
+}
+.Letters > span span {
+  display: block;
+  text-align: center;
+  line-height: 0.9em;
   margin: 0.1em;
-  background: #ccc;
   border-radius: 1em;
-  padding: 0.3em 0.4em 0 0.42em;
+  background: #ccc;
+  padding: 0.3em 0.4em 0.2em 0.42em;
   -moz-transition-property: background-color;
   -o-transition-property: background-color;
   -webkit-transition-property: background-color;
@@ -289,10 +294,10 @@ main,
   -ms-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
-.Letters > span:hover {
+.Letters > span:hover span {
   background: #eee;
 }
-.Letters > span:active {
+.Letters > span:active span {
   background: #f00;
   color: #fff;
 }
