@@ -19,7 +19,13 @@ const createPoemLines = () => {
   const poem = fs.readFileSync('poem.txt', 'utf8')
                  .split('\n').filter(line => line.trim())
   let index = 0
-  return () => poem[index > poem.length - 1? (index = 0) : index++]
+  return () => {
+    index = index >= poem.length - 1? 0 : index + 1
+    return {
+      content: poem[index],
+      index: index,
+    }
+  }
 }
 const poemLine = createPoemLines()
 
@@ -28,8 +34,8 @@ let i = 0
 const tick = () => {
   setTimeout(tick, TICK_DELAY)
   const line = poemLine()
-  history = [...history.slice(-39), { line }]
-  io.emit('text-line', { line })
+  history = [...history.slice(-39), line]
+  io.emit('text-line', line)
 }
 tick()
 
