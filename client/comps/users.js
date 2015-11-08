@@ -4,10 +4,10 @@ const Users = props => (
   <div className='Users'>
     {props.users && props.userId? (
       <ul>
-        {props.users.map((user, i) => {
+        {props.users.sort((a, b) => b.amount - a.amount).map((user, i) => {
           const className = user.id === props.userId? 'me' : ''
           return (
-            <li className={className} key={i}>
+            <li className={className} key={user.id}>
               <span className='user-icon'>
                 {user.face}
               </span>
