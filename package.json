@@ -15,9 +15,9 @@
   "scripts": {
     "start": "node app.js",
     "postinstall": "node scripts/postinstall.js && npm run build-prod",
-    "build": "webpack",
-    "build-css": "stylus -I ./node_modules/nib/lib ./public/css/main.styl --out ./public/dist --compress",
-    "build-prod": "webpack -p && npm run build-css",
+    "build-js": "./node_modules/.bin/webpack -p",
+    "build-css": "./node_modules/.bin/stylus -I ./node_modules/nib/lib ./public/css/main.styl --out ./public/dist --compress",
+    "build-prod": "npm run build-js && npm run build-css",
     "watch": "webpack-dev-server --port 3000 --progress --content-base public/",
     "watch-css": "stylus -I ./node_modules/nib/lib --watch ./public/css/main.styl --out ./public/dist",
     "frequencies": "node scripts/letters-frequency > frequencies.json"
