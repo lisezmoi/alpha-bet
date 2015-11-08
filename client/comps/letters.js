@@ -6,15 +6,16 @@ const Letters = props => (
   <div className='Letters'>
     {chars.map((char, i) => {
       const className = char === '.'? 'Letters-letter-blank' : ''
+      const lowChar = char.toLowerCase()
       return (
         <span
           key={i}
           className={className}
           onMouseDown ={() => {
-            props.onPressLetter(char)
-            props.onStartBet(char)
+            props.onPressLetter(lowChar)
+            props.onStartBet(lowChar)
           }}
-          onMouseUp={() => props.onEndBet(char)}
+          onMouseUp={() => props.onEndBet(lowChar)}
         >
           <span>{char}</span>
         </span>

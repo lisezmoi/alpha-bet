@@ -7,7 +7,7 @@ const socketio = require('socket.io')
 
 const PROD = process.env.NODE_ENV === 'production'
 const ASSETS_BASE = PROD? '/' : 'http://localhost:3000/'
-const TICK_DELAY = 500
+const TICK_DELAY = 400
 
 const app = express()
 const server = http.Server(app)
@@ -16,6 +16,17 @@ const io = socketio(server)
 const freqs = JSON.parse(fs.readFileSync('frequencies.json', 'utf8'))
 
 const users = require('./server/users')()
+
+const getBetsPerLine = (users, content) => {
+  const bets = users.getAllBets()
+  return content.split('').reduce((o, letter, i) => {
+    if (o[letter]) return o
+    if (bets[letter]) {
+      o[letter] = bets[letter]
+    }
+    return o
+  }, {})
+}
 
 const createPoemLines = () => {
   const poem = fs.readFileSync('poem.txt', 'utf8')
@@ -26,6 +37,7 @@ const createPoemLines = () => {
     return {
       content: poem[index],
       index: index,
+      bets: getBetsPerLine(users, poem[index]),
     }
   }
 }
@@ -45,7 +57,7 @@ io.on('connection', socket => {
   console.log('Hi ' + socket.id)
 
   // Emit the user id
-  io.emit('user-id', socket.id)
+  socket.emit('user-id', socket.id)
 
   // Emit the updated list of users
   io.emit('users', users.add(socket.id))

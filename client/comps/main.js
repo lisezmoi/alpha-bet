@@ -6,6 +6,7 @@ const Main = props => (
   <div className='Main'>
     <Lines
       lines={props.lines}
+      userId={props.userId}
     />
     <Logo
       onToggleAbout={props.onToggleAbout}

@@ -13,7 +13,7 @@ const Users = props => (
               </span>
               {' '}
               {user.bets.map((bet, i) => (
-                <span className='letter' key={i}>{bet}</span>
+                <span className='letter' key={i}>{bet.toUpperCase()}</span>
               ))}
               {' '}
               <span className='score'>${user.amount}</span>

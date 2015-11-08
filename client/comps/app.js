@@ -39,6 +39,7 @@ class App extends React.Component {
         <div className='App'>
           <Main
             lines={props.lines}
+            userId={props.userId}
             onToggleAbout={this.toggleAbout.bind(this)}
           />
           <Sidebar
