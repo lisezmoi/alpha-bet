@@ -23,7 +23,13 @@ socket.on('user-id', userId => {
 })
 
 socket.on('users', users => {
+  // console.log('received users', users)
   store.dispatch(actions.updateUsers(users))
+})
+
+socket.on('bet-history', betHistory => {
+  // console.log('received bet history', betHistory)
+  store.dispatch(actions.updateBetHistory(betHistory))
 })
 
 const startBet = letter => {

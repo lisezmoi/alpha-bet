@@ -7,6 +7,14 @@ const istate = {
   lines: [],
   aboutOpened: false,
   pressedLetter: null,
+  betHistory: [],
+}
+
+export const betHistory = (state = istate.betHistory, action) => {
+  if (action.type === actions.UPDATE_BET_HISTORY) {
+    return action.betHistory.slice()
+  }
+  return state
 }
 
 export const userId = (state = istate.userId, action) => {
