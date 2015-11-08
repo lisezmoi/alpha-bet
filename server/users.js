@@ -73,6 +73,15 @@ module.exports = () => {
     }
     return users
   }
+  const getAllBets = () => users.reduce((allBets, user, i) => {
+    user.bets.forEach(letter => {
+      if (!allBets[letter]) {
+        allBets[letter] = []
+      }
+      allBets[letter].push(user.id)
+    })
+    return allBets
+  }, {})
   return {
     get: get,
     add: add,
@@ -80,5 +89,6 @@ module.exports = () => {
     users: users,
     addBet: addBet,
     rmBet: rmBet,
+    getAllBets: getAllBets,
   }
 }

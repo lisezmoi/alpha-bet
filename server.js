@@ -17,6 +17,17 @@ const freqs = JSON.parse(fs.readFileSync('frequencies.json', 'utf8'))
 
 const users = require('./server/users')()
 
+const getBetsPerLine = (users, content) => {
+  const bets = users.getAllBets()
+  return content.split('').reduce((o, letter, i) => {
+    if (o[letter]) return o
+    if (bets[letter]) {
+      o[letter] = bets[letter]
+    }
+    return o
+  }, {})
+}
+
 const createPoemLines = () => {
   const poem = fs.readFileSync('poem.txt', 'utf8')
                  .split('\n').filter(line => line.trim())
@@ -26,6 +37,7 @@ const createPoemLines = () => {
     return {
       content: poem[index],
       index: index,
+      bets: getBetsPerLine(users, poem[index]),
     }
   }
 }
