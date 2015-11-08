@@ -2,7 +2,7 @@
 
 *Become the master of the Letter Market.*
 
-Alpha Bet is a game where letters become products you can bet on. Buy and sold at the right time, the letters that appears all kind of texts. Score and defeat the most talented letter gamblers on the Internet.
+Alpha Bet is a game where letters are products. Bet on it, receive money. You will have to buy and sell in time to defeat and beat the most talented letter gamblers on the Internet.
 
 ## Installation
 

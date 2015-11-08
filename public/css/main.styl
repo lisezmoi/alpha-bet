@@ -47,28 +47,26 @@ html, body, main, .main-in, .app-container
       color userColor
   .line:last-child
     .letter
-      &.letter-current
-        animation-duration .5s
-        animation-name userBlop
       &.letter-other
         animation-duration .4s
         animation-name blop
         color black
+      &.letter-current
+        animation-duration .5s
+        animation-name userBlop
 
 @keyframes userBlop
   0%
     box-shadow 0 0 0 transparent
   10%
-    box-shadow 0 0 0 20px userColor
+    box-shadow 0 0 0 5px userColor
   100%
     box-shadow 0 0 0px transparent
 @keyframes blop
   0%
     box-shadow 0 0 0 transparent
-
-  1%
-    box-shadow 0 0 0 10px rgba(0,0,0,.2)
-
+  5%
+    box-shadow 0 0 0 5px rgba(0,0,0,.2)
   100%
     box-shadow 0 0 0px transparent
 
@@ -123,7 +121,7 @@ html, body, main, .main-in, .app-container
       line-height 0.9em
       margin .1em
       border-radius r
-      background #ccc
+      background #e1e1e1
       padding 0.3em 0.4em 0.2em 0.42em
       transition background-color .3s ease
     &:hover span
@@ -138,7 +136,7 @@ html, body, main, .main-in, .app-container
   transition all .4s ease
   position absolute
   background userColor
-  padding 25vh
+  padding 20vh
   font-size 30px
   line-height 2.5em
   text-align center
@@ -148,6 +146,14 @@ html, body, main, .main-in, .app-container
   left 5%
   right 5%
   box-shadow 0 0px 7px #888
+  .col
+    float left
+    width 50%
+    padding-top 10vh
+    &:last-child
+      padding-left 4vw
+      font-size 16px
+      line-height 1.2em
   .about-button
     position absolute
     right m
@@ -252,7 +258,7 @@ a
   position absolute
   bottom 25px
   left m
-  filter hue-rotate(134deg) saturate(315%)
+  filter hue-rotate(150deg) saturate(280%)
   transition filter .1s ease
   &.mobile
     display none
@@ -261,6 +267,12 @@ a
   .About
     font-size 20px
     padding 20vh m m m
+    .col
+      float none
+      width 100%
+      padding-top 0
+      &:last-child
+        padding-top 5vh
   .support, .Logo h1, .Letters-letter-blank
     display none
   .Logo
@@ -273,7 +285,7 @@ a
     flex-flow column
   .Main
     flex-flow row
-    .Main-lines
+    .Lines
       width 100%
   .Sidebar
     Flex 0 0 auto
