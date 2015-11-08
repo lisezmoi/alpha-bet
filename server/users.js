@@ -116,12 +116,10 @@ module.exports = () => {
         let diff = 0
         if (frequencyScore < 1) {
           diff = frequencyScore / 50
-        } else if (frequencyScore < 10) {
-          diff = frequencyScore
         } else {
-          diff = Math.pow(frequencyScore, 0.7)
+          diff = Math.pow(frequencyScore, 0.9)
         }
-        return amount + diff
+        return amount + diff * (1 - (7 / appearsEvery))
       }, 0)
 
       // Update the user object
