@@ -1,41 +1,23 @@
-## Quick Start
+# Alpha Bet
 
-~~~sh
-# getting the code
-git clone git@github.com:nko5/lisezmoi.git && cd ./lisezmoi/
+*Become the master of the Letter Market.*
 
-# developing
-npm install
-npm start
+Alpha Bet is a game where letters become products you can bet on. Buy and sold at the right time, the letters that appears all kind of texts. Score and defeat the most talented letter gamblers on the Internet.
 
-# setup your modulus account
-npm install -g modulus
-modulus login
+## Installation
 
-# deploying to Modulus (to http://lisezmoi.2015.nodeknockout.com/)
-modulus deploy
+    $ git clone git@github.com:bpierre/jaatc.git
+    $ cd jaatc
+    $ npm install
 
-# view the most recent logs from modulus
-modulus project logs
-~~~
+## Launch
 
-Read more about this setup [on our blog][deploying-nko].
+    $ npm start
 
-[deploying-nko]: http://www.nodeknockout.com/deploying
+## Authors
 
-### Vote KO Widget
+We are [LISEZMOI](http://lisezmoi.org) aka [Pierre Bertet](http://pierrebertet.net/) and [Raphaël Bastide](http://raphaelbastide.com).
 
-![Vote KO widget](http://f.cl.ly/items/1n3g0W0F0G3V0i0d0321/Screen%20Shot%202012-11-04%20at%2010.01.36%20AM.png)
+# License
 
-Use our "Vote KO" widget to let from your app directly. Here's the code for
-including it in your site:
-
-~~~html
-<iframe src="http://nodeknockout.com/iframe/lisezmoi" frameborder=0 scrolling=no allowtransparency=true width=115 height=25>
-</iframe>
-~~~
-
-## Have fun!
-
-If you have any issues, we're on IRC in #nodeknockout on freenode, email us at
-<help@nodeknockout.com>, or tweet [@nodeknockout](https://twitter.com/nodeknockout).
+[MIT](http://opensource.org/licenses/MIT)

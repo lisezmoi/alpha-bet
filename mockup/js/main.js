@@ -5,11 +5,11 @@ $('.about-button').click(function(){
 });
 
 var lastLine = $('.last-line'),
-    userList = $('.user-list'),
-    userChar = $('.myself .letter').html();
+    userList = $('.Users'),
+    userChar = $('.me .letter').html();
 function tagHighlight(){
   lastLine.addClass('highlight');
-  // userList.removeClass('highlight')
+   userList.removeClass('highlight')
 };
 function highlight(currentChar, otherChar){
   lastLine.html(lastLine.text().split('').map(char => {
