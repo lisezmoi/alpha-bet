@@ -43,22 +43,45 @@ html, body, main, .main-in, .app-container
   white-space pre
   .letter
     border-radius r
-    transition all 0.8s ease
     &.letter-current
       color userColor
-      box-shadow 0 0 0 0px transparent
-      background transparent
-    &.letter-other
-      box-shadow 0 0 0 0px transparent
-      transition all 0.3s ease
   .line:last-child
     .letter
-      background transparent
       &.letter-current
-        box-shadow 0 0 0 2px u serColor
-        background userColor
+        animation-duration .5s
+        animation-name userBlop
       &.letter-other
+        animation-duration .4s
+        animation-name blop
         color black
+
+@keyframes userBlop
+  0%
+    box-shadow 0 0 0 transparent
+    background transparent
+    color userColor
+  10%
+    box-shadow 0 0 0 20px userColor
+    background userColor
+    color white
+  100%
+    box-shadow 0 0 0px transparent
+    background transparent
+    color userColor
+@keyframes blop
+  0%
+    box-shadow 0 0 0 transparent
+    background transparent
+    color black
+  1%
+    box-shadow 0 0 0 10px rgba(0,0,0,.2)
+    background rgba(0,0,0,.2)
+    color white
+  100%
+    box-shadow 0 0 0px transparent
+    background transparent
+    color black
+
 .Sidebar
   flex 0 0 350px
   display flex
@@ -242,17 +265,6 @@ a
   transition filter .1s ease
   &.mobile
     display none
-
-@keyframes bet
-  0%
-    box-shadow 0 0 0 black
-    transform scale(1.2)
-  50%
-    box-shadow 0 0 10px black
-    transform scale(1.5)
-  100%
-    box-shadow 0 0 0px black
-    transform scale(1.2)
 
 @media only screen and (max-width: 800px)
   .About
