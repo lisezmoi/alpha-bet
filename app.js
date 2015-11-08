@@ -30,8 +30,15 @@ const tick = () => {
 tick()
 
 io.on('connection', socket => {
+  console.log('New user.')
+
   socket.emit('text-history', history)
-  console.log('A user connected!')
+  socket.on('start-bet', letter => {
+    console.log('Start bet on ' + letter)
+  })
+  socket.on('end-bet', letter => {
+    console.log('End bet on ' + letter)
+  })
 })
 
 const homepage = fs.readFileSync(__dirname + '/public/index.html', 'utf8')

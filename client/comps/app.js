@@ -20,7 +20,10 @@ class App extends React.Component {
             lines={props.lines}
             onToggleAbout={this.toggleAbout.bind(this)}
           />
-          <Sidebar />
+          <Sidebar
+            onStartBet={props.onStartBet}
+            onEndBet={props.onEndBet}
+          />
         </div>
         <About
           opened={props.aboutOpened}
