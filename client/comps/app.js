@@ -4,6 +4,7 @@ import * as actions from '../action-creators'
 import Main from './main'
 import Sidebar from './sidebar'
 import About from './about'
+import End from './end'
 import Footer from './footer'
 
 const stateToProps = state => ({
@@ -55,6 +56,7 @@ class App extends React.Component {
           opened={props.aboutOpened}
           onToggleAbout={this.toggleAbout.bind(this)}
         />
+      <End/>
       <Footer/>
       </div>
     )

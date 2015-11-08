@@ -7,7 +7,7 @@ r = 1em // radius
 userColor = red
 
 body
-  font 15px/1.8em 'anka', monospace
+  font 20px/1.2em 'anka', monospace
 
 html, body, main, .main-in, .app-container
   height 100%
@@ -51,7 +51,7 @@ html, body, main, .main-in, .app-container
   flex 0 0 auto
   width 100%
   line-height 1.5em
-  width 760px
+  width 800px
   margin 0 auto 50vh
   white-space pre
   .letter
@@ -180,16 +180,27 @@ html, body, main, .main-in, .app-container
   left 10%
   right 10%
 
-.Chart
-  flex 1 0 auto
-  background gray
-  background-size 100% 100%
-  .letter
-    background userColor
-    color white
-    font-weight bold
-    padding 0.1em 0.4em 0 0.4em
-    border-radius r
+
+.End
+  transition all .4s ease
+  position absolute
+  background black
+  padding 20vh
+  font-size 30px
+  line-height 2.5em
+  text-align center
+  color white
+  bottom 120%
+  top -170%
+  left 5%
+  right 5%
+  box-shadow 0 0px 7px #888
+.End-opened
+  bottom 10%
+  top 10%
+  left 10%
+  right 10%
+
 
 .Users
   flex 1 0 0
