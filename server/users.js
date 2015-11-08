@@ -47,7 +47,7 @@ module.exports = () => {
         id: id,
         bets: [],
         face: randomFace(),
-        amount: 99,
+        amount: 100,
       })
     }
     return users
@@ -82,6 +82,28 @@ module.exports = () => {
     })
     return allBets
   }, {})
+  const updateAmounts = (line, freqs) => {
+    const lineLen = line.content.length
+    const lineStats = line.content.split('').reduce((o, letter) => {
+      if (!o[letter]) o[letter] = 0
+      o[letter] += 1
+      return o
+    }, {})
+    return users.map(user => {
+      user.amount = user.bets.reduce((amount, bet) => {
+        if (!lineStats[bet]) return amount - Math.random() * 2
+        const appearsEvery = freqs.total / freqs.letters[bet]
+        const expectedFrequency = lineLen / appearsEvery
+        const frequency = lineStats[bet]
+        const frequencyScore = frequency / expectedFrequency
+        if (frequencyScore < 1) {
+          return amount + (frequencyScore / 50)
+        }
+        return amount + Math.pow(frequencyScore, 1.2)
+      }, user.amount)
+      return user
+    })
+  }
   return {
     get: get,
     add: add,
@@ -90,5 +112,6 @@ module.exports = () => {
     addBet: addBet,
     rmBet: rmBet,
     getAllBets: getAllBets,
+    updateAmounts: updateAmounts,
   }
 }
