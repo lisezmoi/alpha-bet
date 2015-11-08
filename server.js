@@ -53,6 +53,10 @@ const tick = () => {
 
   users.users.forEach(user => {
     user.socket.emit('bet-history', user.betHistory)
+    if (user.amount === 0) {
+      user.gameEnded = true
+      user.socket.emit('end-game')
+    }
   })
 
   io.emit('history', users.updateAmounts(line, freqs).getAllUsers())

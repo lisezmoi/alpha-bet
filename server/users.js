@@ -57,7 +57,8 @@ module.exports = () => {
         bets: [],
         face: randomFace(),
         amount: 100,
-        betHistory: []
+        betHistory: [],
+        gameEnded: false,
       })
     }
     return usersApi
@@ -71,7 +72,10 @@ module.exports = () => {
   }
   const addBet = (id, letter) => {
     const user = get(id)
-    if (user && user.bets.indexOf(letter) === -1) {
+    if (!user || user.gameEnded) {
+      return usersApi
+    }
+    if (user.bets.indexOf(letter) === -1) {
       // user.bets.push(letter)
       user.bets = [letter]
       user.betHistory = []
@@ -123,6 +127,9 @@ module.exports = () => {
       // Update the user object
       if (diff !== 0) {
         user.amount = user.amount + diff
+        if (user.amount < 0) {
+          user.amount = 0 // end
+        }
         user.betHistory.unshift(diff)
         user.betHistory = user.betHistory.slice(0, 40)
       }

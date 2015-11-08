@@ -32,6 +32,10 @@ socket.on('bet-history', betHistory => {
   store.dispatch(actions.updateBetHistory(betHistory))
 })
 
+socket.on('end-game', () => {
+  store.dispatch(actions.endGame())
+})
+
 const startBet = letter => {
   socket.emit('start-bet', letter)
 }

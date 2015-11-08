@@ -8,6 +8,14 @@ const istate = {
   aboutOpened: false,
   pressedLetter: null,
   betHistory: [],
+  gameEnded: false,
+}
+
+export const gameEnded = (state = istate.gameEnded, action) => {
+  if (action.type === actions.END_GAME) {
+    return true
+  }
+  return state
 }
 
 export const betHistory = (state = istate.betHistory, action) => {

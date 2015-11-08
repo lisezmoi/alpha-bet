@@ -7,7 +7,11 @@ export const UPDATE_USERS = 'UPDATE_USERS'
 export const PRESS_LETTER = 'PRESS_LETTER'
 export const UPDATE_USER_ID = 'UPDATE_USER_ID'
 export const UPDATE_BET_HISTORY = 'UPDATE_BET_HISTORY'
+export const END_GAME = 'END_GAME'
 
+export const endGame = () => ({
+  type: END_GAME,
+})
 export const updateBetHistory = betHistory => ({
   type: UPDATE_BET_HISTORY,
   betHistory,
