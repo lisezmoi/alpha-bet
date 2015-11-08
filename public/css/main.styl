@@ -68,23 +68,6 @@ html, body, main, .main-in, .app-container
         animation-duration .5s
         animation-name userBlop
         color userColor
-
-@keyframes userBlop
-  0%
-    box-shadow 0 0 0 transparent
-  10%
-    box-shadow 0 0 0 5px userColor
-  100%
-    box-shadow 0 0 0px transparent
-@keyframes blop
-  0%
-    box-shadow 0 0 0 transparent
-  5%
-    box-shadow 0 0 0 5px rgba(0,0,0,.2)
-  100%
-    box-shadow 0 0 0px transparent
-
-
 .Sidebar
   flex 0 0 350px
   display flex
@@ -129,6 +112,7 @@ html, body, main, .main-in, .app-container
     width (294px / 6)
     font-size 30px
     cursor pointer
+    position relative
     span
       display block
       text-align center
@@ -138,11 +122,26 @@ html, body, main, .main-in, .app-container
       background #e1e1e1
       padding 0.3em 0.4em 0.2em 0.42em
       transition background-color .3s ease
+      &:after
+        display none
+        content attr(data-risk)
+        background #e1e1e1
+        border-radius r
+        line-height 10px
+        font-size 10px
+        padding 2px
+        position absolute
+        opacity 1
+        top 3em
+        left 3.1em
+        transition opacity .2s ease
     &:hover span
       background #eee
     &:active span
       color white
       background userColor
+      &:after
+        opacity 0
 .Letters-letter-blank
   visibility hidden
 
@@ -193,7 +192,7 @@ html, body, main, .main-in, .app-container
     border-radius r
 
 .Users
-  flex 0 0 auto
+  flex 1 0 0
   align-self auto
   padding 20px
   flex-direction column
@@ -201,63 +200,47 @@ html, body, main, .main-in, .app-container
   align-items stretch
   font-size 16px
   overflow-y auto
-  min-height 0
-  li
-    height 31px
-    margin-bottom 20px
-    .user-icon
-      color #555
-      background #f1f1f1
-      border-radius r
-      padding 2px
-      width 6em
-      text-align center
-      display inline-block
-      white-space nowrap
-    .letter
-      background black
-      color white
-      padding 0.25em 0.45em .15em
-      margin-right 2px
-      font-weight bold
-      border-radius r
-      animation-duration .1s
-      animation-name appearLetter
-    &.me
+  .inner
+    li
+      margin-bottom 10px
+      height 30px
       .user-icon
-        color userColor
+        color #555
+        background #f1f1f1
+        border-radius r
+        padding 2px
+        width 6em
+        text-align center
+        display inline-block
+        white-space nowrap
       .letter
-        box-shadow 0 0 0 0px userColor
-        background-color userColor
-        border-color userColor
-@keyframes appearLetter
-  0%
-    font-size 0
-  100%
-    font-size inherit
-.logo
-  position absolute
-  bottom m
-  right 0
-  width 100%
-  display block
-  text-align center
-  h1
-    display inline
-    font-size 20px
-    color #888
-  .about-button
-    margin-left 10px
-    cursor pointer
-    color white
-    background #aaa
-    padding 0.25em 0.45em 0 0.45em
-    border-radius r
-    font-weight bold
-    position relative
-    top -2px
-    &:hover
-      background userColor
+        background black
+        color white
+        padding 0.25em 0.45em .15em
+        margin-right 2px
+        font-weight bold
+        border-radius r
+        animation-duration .1s
+        animation-name appearLetter
+      .coin
+        margin-right 1px
+        font-size 20px
+        color #888
+        position relative
+        display inline-block
+        &.up
+          animation-duration 1s
+          animation-name coinup
+      .float:last-child
+        font-size 12px
+        color #777
+      &.me
+        .user-icon
+          color userColor
+        .letter
+          box-shadow 0 0 0 0px userColor
+          background-color userColor
+          border-color userColor
 
 h2
   flex 0 0 auto
@@ -273,7 +256,7 @@ a
   position absolute
   bottom 25px
   left m
-  filter hue-rotate(150deg) saturate(280%)
+  filter hue-rotate(130deg) saturate(280%)
   transition filter .1s ease
   &.mobile
     display none
@@ -314,6 +297,38 @@ a
   h2.title-letters
     order 2
 
+// Animations
+
+@keyframes appearLetter
+  0%
+    font-size 0
+  100%
+    font-size inherit
+@keyframes userBlop
+  0%
+    box-shadow 0 0 0 transparent
+  10%
+    box-shadow 0 0 0 5px userColor
+  100%
+    box-shadow 0 0 0px transparent
+@keyframes blop
+  0%
+    box-shadow 0 0 0 transparent
+  5%
+    box-shadow 0 0 0 5px rgba(0,0,0,.2)
+  100%
+    box-shadow 0 0 0px transparent
+@keyframes coinup
+  0%
+    top 0
+    transform scale(1, 1)
+  30%
+    top - 15px
+    color userColor
+    transform scale(1, 0)
+  100%
+    top 0
+    transform scale(1, 1)
 
 .letter::selection {background:transparent;}
 .letter::-moz-selection {background:transparent;}

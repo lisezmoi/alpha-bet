@@ -20,7 +20,7 @@ const About = props => (
       >×</span>
     </div>
     <div className='col'>
-      <p>Alpha Bet is a game where letters are products. Bet on it, receive money. You will have to buy and sell in time to defeat and beat the most talented letter gamblers on the Internet.</p>
+      <p>Alpha Bet is a game where letters are products. Bet on it, receive coins. You will have to buy and sell in time to defeat and beat the most talented letter gamblers on the Internet.</p>
       <p>This project has been made in 48 hours for Node.js Knockout 2015. Source code can be found on the <a href="https://github.com/lisezmoi/alpha-bet">team’s repository</a>.</p>
     </div>
   </div>
