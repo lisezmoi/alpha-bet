@@ -18,6 +18,10 @@ socket.on('text-history', lines => {
   store.dispatch(actions.replaceLines(lines))
 })
 
+socket.on('users', users => {
+  store.dispatch(actions.updateUsers(users))
+})
+
 const startBet = letter => {
   socket.emit('start-bet', letter)
 }

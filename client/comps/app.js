@@ -5,9 +5,14 @@ import Main from './main'
 import Sidebar from './sidebar'
 import About from './about'
 
+const stateToProps = state => ({
+  users: state.users,
+  lines: state.lines,
+  aboutOpened: state.aboutOpened,
+})
+
 class App extends React.Component {
   toggleAbout() {
-    console.log('toggle', this.props)
     this.props.dispatch(actions.toggleAbout())
   }
   render() {
@@ -23,6 +28,7 @@ class App extends React.Component {
           <Sidebar
             onStartBet={props.onStartBet}
             onEndBet={props.onEndBet}
+            users={props.users}
           />
         </div>
         <About
@@ -33,10 +39,5 @@ class App extends React.Component {
     )
   }
 }
-
-const stateToProps = state => ({
-  lines: state.lines,
-  aboutOpened: state.aboutOpened,
-})
 
 export default connect(stateToProps)(App)
