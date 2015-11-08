@@ -15,7 +15,8 @@ const io = socketio(server)
 const users = require('./server/users')()
 
 const createPoemLines = () => {
-  const poem = fs.readFileSync('poem.txt', 'utf8').split('\n')
+  const poem = fs.readFileSync('poem.txt', 'utf8')
+                 .split('\n').filter(line => line.trim())
   let index = 0
   return () => poem[index > poem.length - 1? (index = 0) : index++]
 }
