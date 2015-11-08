@@ -13,9 +13,25 @@ const PATH_STYLE = {
   strokeOpacity: '1',
 }
 
-const pathD = values => (
-  values.reduce((d, val) => `${d} l ${-20} ${-val*10}`, 'M500,250 ')
+const map = (value, istart, istop, ostart, ostop) => (
+  ostart + (ostop - ostart) * ((value - istart) / (istop - istart))
 )
+
+const pathD = values => {
+  let variationValue = 0
+  const variations = values.map(val => (
+    variationValue = variationValue + val
+  ))
+  const max = Math.max(...variations)
+  const min = Math.min(...variations)
+  return variations.reduce((d, val, i) => {
+    const y = map(val, min, max, 125, 500 - 125)
+    if (i === 0) {
+      return `M ${500 - 10 * i} ${y}`
+    }
+    return `${d} L ${500 - 10 * i} ${y}`
+  }, '')
+}
 
 const Graph = props => (
   <div className='Graph'>
