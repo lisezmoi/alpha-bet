@@ -8,6 +8,15 @@ const Users = props => (
       const className = ''
       return (
         <li className={className}>
+          <span className='user-icon'>
+            {user.face}
+          </span>
+          {' '}
+          <span className='letter'>
+            A
+          </span>
+          {' '}
+          <span className='score'>$200</span>
         </li>
       )
     })}
