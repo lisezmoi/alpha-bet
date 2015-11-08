@@ -13,6 +13,8 @@ const app = express()
 const server = http.Server(app)
 const io = socketio(server)
 
+const freqs = JSON.parse(fs.readFileSync('frequencies.json', 'utf8'))
+
 const users = require('./server/users')()
 
 const createPoemLines = () => {
