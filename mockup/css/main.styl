@@ -7,7 +7,7 @@ r = 1em // radius
 userColor = red
 
 body
-  font 16px/1.8em cmutl, monospace
+  font 15px/1.8em anka, monospace
 
 html, body, main, .chart-letters-users
   height 100%
@@ -46,28 +46,35 @@ html, body, main, .chart-letters-users
       width 100%
       .txt-stream-inner
         line-height 4vh
-        width 660px
+        width 760px
         margin 0 auto
         white-space pre
-        .letter-bet
-          color userColor
-          box-shadow 0 0 0 0px userColor
-          transition box-shadow 0.7s ease-out
-        .letter-blop
-          background userColor
-          border 5px solid userColor
+        .letter
           border-radius r
+          &.letter-current
+            color userColor
+            transition all 0.8s ease
+          &.letter-other
+            box-shadow 0 0 0 0px #555
+            transition all 0.3s ease
         .last-line
-          background userColor
-          color white
-          padding 0 5px
-          position relative
-          left -5px
-          border-radius r
-          .letter-bet
-            color white
-            box-shadow 0 0 0 10px transparent
-            border-radius r
+          .letter
+            &.letter-current
+              color white
+              box-shadow 0 0 0 0px userColor
+              background userColor
+            &.letter-other
+              color white
+              box-shadow 0 0 0 0px #555
+              background #555
+          &.highlight
+            .letter
+              box-shadow 0 0 0 20px transparent
+              background transparent
+              &.letter-current
+                color userColor
+              &.letter-other
+                color black
     .chart
       flex 1 0 auto
       background url(../img/chart.svg) no-repeat
@@ -75,9 +82,9 @@ html, body, main, .chart-letters-users
       .letter
         background userColor
         color white
+        font-weight bold
         padding 0.1em 0.4em 0 0.4em
         border-radius r
-
   &.user-list
     font-size 16px
     li
@@ -90,28 +97,48 @@ html, body, main, .chart-letters-users
       .letter
         background black
         color white
-        padding 0.1em 0.4em 0 0.4em
+        padding 0.1em 0.44em
+        font-weight bold
         border-radius r
+        transition all 0.9s ease
+        box-shadow 0 0 0 0px #555
       &.myself
         .user-icon
           color userColor
         .letter
+          box-shadow 0 0 0 0px userColor
           background-color userColor
           border-color userColor
+    &.highlight
+      .myself
+        .letter
+          box-shadow 0 0 0 30px transparent
   &.letter-list
     flex 0 0 auto
     flex-wrap wrap
     justify-content flex-start
     align-content flex-start
     .letter
+      font-weight bold
       cursor pointer
       font-size 30px
       height 1.4em
       margin .1em
       background #ccc
       border-radius r
-      padding 0.3em 0.45em 0 0.45em
+      padding 0.3em 0.40em 0 0.40em
       transition background-color .1s ease-out
+      position relative
+      &:after
+        content attr(data-bet)
+        background #ccc
+        border-radius r
+        line-height 10px
+        font-size 10px
+        padding 2px
+        position absolute
+        top 2.7em
+        left 3.1em
       &:hover
         background #eee
       &:active
@@ -120,6 +147,8 @@ html, body, main, .chart-letters-users
       &.blank
         color transparent
         background transparent
+        &:after
+          padding 0
 
 .logo
   position absolute
@@ -136,8 +165,9 @@ html, body, main, .chart-letters-users
     margin-left 10px
     cursor pointer
     color white
+    font-size 14px
     background #aaa
-    padding 0.25em 0.45em 0 0.45em
+    padding 0.25em 0.46em 0 0.40em
     border-radius r
     font-weight bold
     position relative
@@ -145,27 +175,32 @@ html, body, main, .chart-letters-users
     &:hover
       background userColor
 #about
-  transistion all 0.8s linear
+  transition all .4s ease
   position absolute
-  display none
   background userColor
-  padding 20vh
+  padding 25vh
   font-size 30px
   line-height 2.5em
   text-align center
   color white
-  bottom 10%
-  top 10%
-  left 10%
-  right 10%
+  bottom 120%
+  top -170%
+  left 5%
+  right 5%
+  box-shadow 0 0px 7px #888
   .about-button
     position absolute
     right m
     top 0
     color white
     cursor pointer
+    font-size 60px
   &.opened
-    display block
+    bottom 10%
+    top 10%
+    left 10%
+    right 10%
+
 
 h2
   flex 0 0 auto
