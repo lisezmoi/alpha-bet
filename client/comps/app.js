@@ -14,6 +14,7 @@ const stateToProps = state => ({
   aboutOpened: state.aboutOpened,
   pressedLetter: state.pressedLetter,
   betHistory: state.betHistory,
+  gameEnded: state.gameEnded,
 })
 
 class App extends React.Component {
@@ -56,8 +57,10 @@ class App extends React.Component {
           opened={props.aboutOpened}
           onToggleAbout={this.toggleAbout.bind(this)}
         />
-      <End/>
-      <Footer/>
+        <End
+          opened={props.gameEnded}
+        />
+        <Footer/>
       </div>
     )
   }
