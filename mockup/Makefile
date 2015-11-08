@@ -1,19 +1,9 @@
 # Makefile for alpha-bet
 
-UGLIFY = ./node_modules/.bin/uglifyjs
 STYLUS = node_modules/.bin/stylus
 NIB = ./node_modules/nib/lib/nib
 
-all: js css
-
-check-uglify:
-	@test -x ${UGLIFY} || { echo "Not sure Uglify-js is installed. Try $$ npm install."; exit 1; }
-
-js: check-uglify
-	@echo "Minifying JS into main-min.js";
-	cat 	js/main.js \
-	| ${UGLIFY} -o js/main-min.js
-	@echo "✓";
+all: css
 
 css: css/main.styl
 	echo "Watching Stylus, output in main-min.css";\
@@ -22,4 +12,4 @@ css: css/main.styl
 deps:
 	npm install
 
-.PHONY: all check-uglify js css deps
+.PHONY: all  css deps
