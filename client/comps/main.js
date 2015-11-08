@@ -1,6 +1,5 @@
 import React from 'react'
 import Logo from './logo'
-
 var lastLine = document.querySelector('.last-line'),
     userList = document.querySelector('.Users'),
     userChar = document.querySelectorAll('.me .letter').innerHTML;

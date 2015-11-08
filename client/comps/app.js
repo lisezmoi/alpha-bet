@@ -4,6 +4,8 @@ import * as actions from '../action-creators'
 import Main from './main'
 import Sidebar from './sidebar'
 import About from './about'
+import Footer from './footer'
+
 
 const stateToProps = state => ({
   users: state.users,
@@ -35,15 +37,7 @@ class App extends React.Component {
           opened={props.aboutOpened}
           onToggleAbout={this.toggleAbout.bind(this)}
         />
-        <iframe
-          className='support'
-          src='http://nodeknockout.com/iframe/lisezmoi'
-          frameBorder='0'
-          scrolling='no'
-          allowTransparency='true'
-          width='115'
-          height='25'
-        />
+      <Footer/>
       </div>
     )
   }
