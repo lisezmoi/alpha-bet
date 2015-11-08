@@ -7,7 +7,7 @@ r = 1em // radius
 userColor = red
 
 body
-  font 16px/1.8em 'cmutl', monospace
+  font 15px/1.8em 'anka', monospace
 
 html, body, main, .chart-letters-users, .app-container
   height 100%
@@ -38,7 +38,36 @@ html, body, main, .chart-letters-users, .app-container
 
 .Main-lines
   flex 0 0 auto
-  padding 10px
+  width 100%
+  line-height 4vh
+  width 760px
+  margin 0 auto
+  white-space pre
+  .letter
+    border-radius r
+    &.letter-current
+      color userColor
+      transition all 0.8s ease
+    &.letter-other
+      transition all 0.3s ease
+  .last-line
+    .letter
+      &.letter-current
+        color white
+        box-shadow 0 0 0 0px userColor
+        background userColor
+      &.letter-other
+        color white
+        box-shadow 0 0 0 0px #555
+        background #555
+    &.highlight
+      .letter
+        box-shadow 0 0 0 20px transparent
+        background transparent
+        &.letter-current
+          color userColor
+        &.letter-other
+          color black
 .Sidebar
   flex 0 0 350px
 .Logo
@@ -74,6 +103,7 @@ html, body, main, .chart-letters-users, .app-container
   padding 20px
   flex-direction row
   display flex
+  font-weight bold
   align-items stretch
   & > span
     cursor pointer
@@ -82,7 +112,7 @@ html, body, main, .chart-letters-users, .app-container
     margin .1em
     background #ccc
     border-radius r
-    padding 0.3em 0.45em 0 0.45em
+    padding 0.3em 0.4em 0 0.42em
     transition background-color .1s ease-out
     &:hover
       background #eee
@@ -92,152 +122,55 @@ html, body, main, .chart-letters-users, .app-container
 .Letters-letter-blank
   visibility hidden
 
-.flex-parent
-  flex-direction row
-  &.chart-letters-users
-    flex 1 0 auto
-    padding 0
-  &.letters-users
-    flex-direction column
-    flex 0 0 350px
-    padding 0
-    justify-content flex-start
-
-.flex-child
-  flex 1 1 auto
-  align-self auto
-  padding m
-  &.charts-text
-    position relative
-    border-right 1px solid #ccc
-    flex-direction column
-    .txt-stream
-      position absolute
-      top 0
-      left 0
-      width 100%
-      .txt-stream-inner
-        line-height 4vh
-        width 660px
-        margin 0 auto
-        white-space pre
-        .letter-bet
-          color userColor
-          box-shadow 0 0 0 0px userColor
-          transition box-shadow 0.7s ease-out
-        .letter-blop
-          background userColor
-          border 5px solid userColor
-          border-radius r
-        .last-line
-          background userColor
-          color white
-          padding 0 5px
-          position relative
-          left -5px
-          border-radius r
-          .letter-bet
-            color white
-            box-shadow 0 0 0 10px transparent
-            border-radius r
-    .chart
-      flex 1 0 auto
-      // background url(../img/chart.svg) no-repeat
-      background-size 100% 100%
-      .letter
-        background userColor
-        color white
-        padding 0.1em 0.4em 0 0.4em
-        border-radius r
-
-  &.user-list
-    font-size 16px
-    li
-      margin-bottom 20px
-      .user-icon
-        color #555
-        background #f1f1f1
-        border 5px solid #f1f1f1
-        border-radius r
-      .letter
-        background black
-        color white
-        padding 0.1em 0.4em 0 0.4em
-        border-radius r
-      &.myself
-        .user-icon
-          color userColor
-        .letter
-          background-color userColor
-          border-color userColor
-  &.letter-list
-    flex 0 0 auto
-    flex-wrap wrap
-    justify-content flex-start
-    align-content flex-start
-    .letter
-      cursor pointer
-      font-size 30px
-      height 1.4em
-      margin .1em
-      background #ccc
-      border-radius r
-      padding 0.3em 0.45em 0 0.45em
-      transition background-color .1s ease-out
-      &:hover
-        background #eee
-      &:active
-        background userColor
-        color white
-      &.blank
-        color transparent
-        background transparent
-
-.logo
-  position absolute
-  bottom m
-  right 0
-  width 100%
-  display block
-  text-align center
-  h1
-    display inline
-    font-size 20px
-    color #888
-  .about-button
-    margin-left 10px
-    cursor pointer
+.Chart
+  flex 1 0 auto
+  background gray
+  background-size 100% 100%
+  .letter
+    background userColor
     color white
-    background #aaa
-    padding 0.25em 0.45em 0 0.45em
-    border-radius r
     font-weight bold
-    position relative
-    top -2px
-    &:hover
-      background userColor
+    padding 0.1em 0.4em 0 0.4em
+    border-radius r
+
+.Users
+  flex 0 0 auto
+  align-self auto
+  padding 20px
+  flex-direction column
+  display flex
+  align-items stretch
+  font-size 16px
+  li
+    margin-bottom 20px
+    .user-icon
+      color #555
+      background #f1f1f1
+      border 5px solid #f1f1f1
+      border-radius r
+    .letter
+      background black
+      color white
+      padding 0.1em 0.44em
+      font-weight bold
+      border-radius r
+      transition all 0.9s ease
+      box-shadow 0 0 0 0px #555
+    &.me
+      .user-icon
+        color userColor
+      .letter
+        box-shadow 0 0 0 0px userColor
+        background-color userColor
+        border-color userColor
+  &.highlight
+    .me
+      .letter
+        box-shadow 0 0 0 30px transparent
+
 #about
-  transistion all 0.8s linear
-  position absolute
   display none
-  background userColor
-  padding 20vh
-  font-size 30px
-  line-height 2.5em
-  text-align center
-  color white
-  bottom 10%
-  top 10%
-  left 10%
-  right 10%
-  .about-button
-    position absolute
-    right m
-    top 0
-    color white
-    cursor pointer
-  &.opened
-    display block
+
 
 h2
   flex 0 0 auto
