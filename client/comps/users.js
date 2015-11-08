@@ -16,7 +16,7 @@ const Users = props => (
                 <span className='letter' key={i}>{bet.toUpperCase()}</span>
               ))}
               {' '}
-              <span className='score'>${user.amount}</span>
+              <span className='score'>${user.amount.toFixed(2)}</span>
             </li>
           )
         })}

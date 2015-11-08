@@ -14,7 +14,6 @@ const server = http.Server(app)
 const io = socketio(server)
 
 const freqs = JSON.parse(fs.readFileSync('frequencies.json', 'utf8'))
-
 const users = require('./server/users')()
 
 const getBetsPerLine = (users, content) => {
@@ -50,6 +49,7 @@ const tick = () => {
   const line = poemLine()
   history = [...history.slice(-39), line]
   io.emit('text-line', line)
+  io.emit('users', users.updateAmounts(line, freqs))
 }
 tick()
 
@@ -59,7 +59,7 @@ io.on('connection', socket => {
   // Emit the user id
   socket.emit('user-id', socket.id)
 
-  // Emit the updated list of users
+  // Broadcast the updated list of users
   io.emit('users', users.add(socket.id))
 
   // Emit the history
