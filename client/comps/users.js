@@ -1,23 +1,5 @@
 import React from 'react'
 
-const users = [
-  '( >д< )',
-  '( ;¬_¬)',
-  '(ಠ ∩ ಠ)',
-  '<(`^´)>',
-  '┐(ﾟ～ﾟ)┌',
-  '╰|⊡_⊡|╯',
-  '|(ᗒᗣᗕ)|',
-  '[ ⊙～⊙]',
-  '(*’･Д･)',
-  '(||ﾟДﾟ}',
-  '\/\/ ･ั_･ั)',
-  '(_ŏ.ŏ)/',
-  '[ ¤_¤]',
-  '( •᷄⌓•᷅ )',
-  '૮(‘▱๋’ )',
-  ]
-
 const Users = props => (
   <div className='Users'>
     <ul>
@@ -30,8 +12,8 @@ const Users = props => (
             {user.face}
           </span>
           {' '}
-          {user.bets.map(bet => (
-            <span className='letter'>{bet}</span>
+          {user.bets.map((bet, i) => (
+            <span className='letter' key={i}>{bet}</span>
           ))}
           {' '}
           <span className='score'>${user.amount}</span>
