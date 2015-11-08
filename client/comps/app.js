@@ -35,7 +35,15 @@ class App extends React.Component {
           opened={props.aboutOpened}
           onToggleAbout={this.toggleAbout.bind(this)}
         />
-      <iframe className='support' src='http://nodeknockout.com/iframe/lisezmoi' frameborder='0' scrolling='no' allowtransparency='true' width='115' height='25'></iframe>
+        <iframe
+          className='support'
+          src='http://nodeknockout.com/iframe/lisezmoi'
+          frameBorder='0'
+          scrolling='no'
+          allowTransparency='true'
+          width='115'
+          height='25'
+        />
       </div>
     )
   }

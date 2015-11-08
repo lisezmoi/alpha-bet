@@ -21,11 +21,11 @@ const users = [
 const Users = props => (
   <div className='Users'>
     <ul>
-    {props.users.map(user => {
+    {props.users.map((user, i) => {
       // const className = user === 'pierre'? 'me' : ''
       const className = ''
       return (
-        <li className={className}>
+        <li className={className} key={i}>
           <span className='user-icon'>
             {user.face}
           </span>
