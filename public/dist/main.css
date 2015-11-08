@@ -1,0 +1,512 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  font: 16px/1.8em 'cmutl', monospace;
+}
+html,
+body,
+main,
+.chart-letters-users,
+.app-container {
+  height: 100%;
+}
+::selection {
+  background: transparent;
+}
+::-moz-selection {
+  background: transparent;
+}
+.App {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: stretch;
+  align-items: stretch;
+}
+.Main {
+  position: relative;
+  overflow: hidden;
+  flex: 0 1 100%;
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  border-right: 1px solid #ccc;
+}
+.Main-lines {
+  flex: 0 0 auto;
+  padding: 10px;
+}
+.Sidebar {
+  flex: 0 0 350px;
+}
+.Logo {
+  position: absolute;
+  bottom: 20px;
+  right: 0;
+  width: 100%;
+  display: block;
+  text-align: center;
+}
+.Logo h1 {
+  display: inline;
+  font-size: 20px;
+  color: #888;
+}
+.Logo .Logo-about {
+  margin-left: 10px;
+  cursor: pointer;
+  color: #fff;
+  background: #aaa;
+  padding: 0.25em 0.45em 0 0.45em;
+  -webkit-border-radius: 1em;
+  border-radius: 1em;
+  font-weight: bold;
+  position: relative;
+  top: -2px;
+}
+.Logo .Logo-about:hover {
+  background: #f00;
+}
+.Letters {
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  align-self: auto;
+  padding: 20px;
+  flex-direction: row;
+  display: flex;
+  align-items: stretch;
+}
+.Letters > span {
+  cursor: pointer;
+  font-size: 30px;
+  height: 1.4em;
+  margin: 0.1em;
+  background: #ccc;
+  -webkit-border-radius: 1em;
+  border-radius: 1em;
+  padding: 0.3em 0.45em 0 0.45em;
+  -moz-transition-property: background-color;
+  -o-transition-property: background-color;
+  -webkit-transition-property: background-color;
+  -ms-transition-property: background-color;
+  -webkit-transition-property: background-color;
+  -moz-transition-property: background-color;
+  -o-transition-property: background-color;
+  -ms-transition-property: background-color;
+  transition-property: background-color;
+  -moz-transition-duration: 0.1s;
+  -o-transition-duration: 0.1s;
+  -webkit-transition-duration: 0.1s;
+  -ms-transition-duration: 0.1s;
+  -webkit-transition-duration: 0.1s;
+  -moz-transition-duration: 0.1s;
+  -o-transition-duration: 0.1s;
+  -ms-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -moz-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  -webkit-transition-timing-function: ease-out;
+  -ms-transition-timing-function: ease-out;
+  -webkit-transition-timing-function: ease-out;
+  -moz-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  -ms-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.Letters > span:hover {
+  background: #eee;
+}
+.Letters > span:active {
+  background: #f00;
+  color: #fff;
+}
+.Letters-letter-blank {
+  visibility: hidden;
+}
+.flex-parent {
+  flex-direction: row;
+}
+.flex-parent.chart-letters-users {
+  flex: 1 0 auto;
+  padding: 0;
+}
+.flex-parent.letters-users {
+  flex-direction: column;
+  flex: 0 0 350px;
+  padding: 0;
+  justify-content: flex-start;
+}
+.flex-child {
+  flex: 1 1 auto;
+  align-self: auto;
+  padding: 20px;
+}
+.flex-child.charts-text {
+  position: relative;
+  border-right: 1px solid #ccc;
+  flex-direction: column;
+}
+.flex-child.charts-text .txt-stream {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.flex-child.charts-text .txt-stream .txt-stream-inner {
+  line-height: 4vh;
+  width: 660px;
+  margin: 0 auto;
+  white-space: pre;
+}
+.flex-child.charts-text .txt-stream .txt-stream-inner .letter-bet {
+  color: #f00;
+  -webkit-box-shadow: 0 0 0 0px #f00;
+  box-shadow: 0 0 0 0px #f00;
+  -moz-transition-property: box-shadow;
+  -o-transition-property: box-shadow;
+  -webkit-transition-property: box-shadow;
+  -ms-transition-property: box-shadow;
+  -webkit-transition-property: box-shadow;
+  -moz-transition-property: box-shadow;
+  -o-transition-property: box-shadow;
+  -ms-transition-property: box-shadow;
+  transition-property: box-shadow;
+  -moz-transition-duration: 0.7s;
+  -o-transition-duration: 0.7s;
+  -webkit-transition-duration: 0.7s;
+  -ms-transition-duration: 0.7s;
+  -webkit-transition-duration: 0.7s;
+  -moz-transition-duration: 0.7s;
+  -o-transition-duration: 0.7s;
+  -ms-transition-duration: 0.7s;
+  transition-duration: 0.7s;
+  -moz-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  -webkit-transition-timing-function: ease-out;
+  -ms-transition-timing-function: ease-out;
+  -webkit-transition-timing-function: ease-out;
+  -moz-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  -ms-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.flex-child.charts-text .txt-stream .txt-stream-inner .letter-blop {
+  background: #f00;
+  border: 5px solid #f00;
+  -webkit-border-radius: 1em;
+  border-radius: 1em;
+}
+.flex-child.charts-text .txt-stream .txt-stream-inner .last-line {
+  background: #f00;
+  color: #fff;
+  padding: 0 5px;
+  position: relative;
+  left: -5px;
+  -webkit-border-radius: 1em;
+  border-radius: 1em;
+}
+.flex-child.charts-text .txt-stream .txt-stream-inner .last-line .letter-bet {
+  color: #fff;
+  -webkit-box-shadow: 0 0 0 10px transparent;
+  box-shadow: 0 0 0 10px transparent;
+  -webkit-border-radius: 1em;
+  border-radius: 1em;
+}
+.flex-child.charts-text .chart {
+  flex: 1 0 auto;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+}
+.flex-child.charts-text .chart .letter {
+  background: #f00;
+  color: #fff;
+  padding: 0.1em 0.4em 0 0.4em;
+  -webkit-border-radius: 1em;
+  border-radius: 1em;
+}
+.flex-child.user-list {
+  font-size: 16px;
+}
+.flex-child.user-list li {
+  margin-bottom: 20px;
+}
+.flex-child.user-list li .user-icon {
+  color: #555;
+  background: #f1f1f1;
+  border: 5px solid #f1f1f1;
+  -webkit-border-radius: 1em;
+  border-radius: 1em;
+}
+.flex-child.user-list li .letter {
+  background: #000;
+  color: #fff;
+  padding: 0.1em 0.4em 0 0.4em;
+  -webkit-border-radius: 1em;
+  border-radius: 1em;
+}
+.flex-child.user-list li.myself .user-icon {
+  color: #f00;
+}
+.flex-child.user-list li.myself .letter {
+  background-color: #f00;
+  border-color: #f00;
+}
+.flex-child.letter-list {
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+}
+.flex-child.letter-list .letter {
+  cursor: pointer;
+  font-size: 30px;
+  height: 1.4em;
+  margin: 0.1em;
+  background: #ccc;
+  -webkit-border-radius: 1em;
+  border-radius: 1em;
+  padding: 0.3em 0.45em 0 0.45em;
+  -moz-transition-property: background-color;
+  -o-transition-property: background-color;
+  -webkit-transition-property: background-color;
+  -ms-transition-property: background-color;
+  -webkit-transition-property: background-color;
+  -moz-transition-property: background-color;
+  -o-transition-property: background-color;
+  -ms-transition-property: background-color;
+  transition-property: background-color;
+  -moz-transition-duration: 0.1s;
+  -o-transition-duration: 0.1s;
+  -webkit-transition-duration: 0.1s;
+  -ms-transition-duration: 0.1s;
+  -webkit-transition-duration: 0.1s;
+  -moz-transition-duration: 0.1s;
+  -o-transition-duration: 0.1s;
+  -ms-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -moz-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  -webkit-transition-timing-function: ease-out;
+  -ms-transition-timing-function: ease-out;
+  -webkit-transition-timing-function: ease-out;
+  -moz-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  -ms-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.flex-child.letter-list .letter:hover {
+  background: #eee;
+}
+.flex-child.letter-list .letter:active {
+  background: #f00;
+  color: #fff;
+}
+.flex-child.letter-list .letter.blank {
+  color: transparent;
+  background: transparent;
+}
+.logo {
+  position: absolute;
+  bottom: 20px;
+  right: 0;
+  width: 100%;
+  display: block;
+  text-align: center;
+}
+.logo h1 {
+  display: inline;
+  font-size: 20px;
+  color: #888;
+}
+.logo .about-button {
+  margin-left: 10px;
+  cursor: pointer;
+  color: #fff;
+  background: #aaa;
+  padding: 0.25em 0.45em 0 0.45em;
+  -webkit-border-radius: 1em;
+  border-radius: 1em;
+  font-weight: bold;
+  position: relative;
+  top: -2px;
+}
+.logo .about-button:hover {
+  background: #f00;
+}
+#about {
+  transistion: all 0.8s linear;
+  position: absolute;
+  display: none;
+  background: #f00;
+  padding: 20vh;
+  font-size: 30px;
+  line-height: 2.5em;
+  text-align: center;
+  color: #fff;
+  bottom: 10%;
+  top: 10%;
+  left: 10%;
+  right: 10%;
+}
+#about .about-button {
+  position: absolute;
+  right: 20px;
+  top: 0;
+  color: #fff;
+  cursor: pointer;
+}
+#about.opened {
+  display: block;
+}
+h2 {
+  flex: 0 0 auto;
+  border-bottom: 1px solid #ccc;
+  font-size: 14px;
+  color: #999;
+  padding: 0 20px;
+}
+a {
+  color: inherit;
+}
+.letter::selection {
+  background: transparent;
+}
+.letter::-moz-selection {
+  background: transparent;
+}
