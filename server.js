@@ -79,6 +79,11 @@ io.on('connection', socket => {
   socket.on('end-bet', letter => {
     console.log(`${socket.id} ended a bet on ${letter}`)
     io.emit('users', users.rmBet(socket.id, letter).getAllUsers())
+
+    const user = users.get(socket.id)
+    if (user) {
+      socket.emit('bet-history', user.betHistory)
+    }
   })
 
   socket.on('disconnect', () => {
