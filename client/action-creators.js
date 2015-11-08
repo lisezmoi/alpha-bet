@@ -4,7 +4,12 @@ export const ADD_LINE = 'ADD_LINE'
 export const REPLACE_LINES = 'REPLACE_LINES'
 export const TOGGLE_ABOUT = 'TOGGLE_ABOUT'
 export const UPDATE_USERS = 'UPDATE_USERS'
+export const PRESS_LETTER = 'PRESS_LETTER'
 
+export const pressLetter = letter => ({
+  type: PRESS_LETTER,
+  letter,
+})
 export const startBet = letter => ({
   type: START_BET,
   letter,

@@ -10,7 +10,10 @@ const Letters = props => (
         <span
           key={i}
           className={className}
-          onMouseDown ={() => props.onStartBet(char)}
+          onMouseDown ={() => {
+            props.onPressLetter(char)
+            props.onStartBet(char)
+          }}
           onMouseUp={() => props.onEndBet(char)}
         >
           <span>{char}</span>
