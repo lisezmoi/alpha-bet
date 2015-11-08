@@ -7,7 +7,12 @@ const Letters = props => (
     {chars.map((char, i) => {
       const className = char === '.'? 'Letters-letter-blank' : ''
       return (
-        <span className={className} key={i}>
+        <span
+          key={i}
+          className={className}
+          onMouseDown ={() => props.onStartBet(char)}
+          onMouseUp={() => props.onEndBet(char)}
+        >
           <span>{char}</span>
         </span>
       )

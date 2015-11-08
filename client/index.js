@@ -18,8 +18,18 @@ socket.on('text-history', lines => {
   store.dispatch(actions.replaceLines(lines))
 })
 
+const startBet = letter => {
+  socket.emit('start-bet', letter)
+}
+const endBet = letter => {
+  socket.emit('end-bet', letter)
+}
+
 ReactDOM.render((
   <Provider store={store}>
-    <App />
+    <App
+      onStartBet={letter => startBet(letter)}
+      onEndBet={letter => endBet(letter)}
+    />
   </Provider>
 ), document.querySelector('main'))
