@@ -17,7 +17,10 @@ const socket = io.connect()
 
 socket.on('text-line', line => {
   store.dispatch(actions.addLine(line))
-  // console.log(line)
+})
+
+socket.on('text-history', lines => {
+  store.dispatch(actions.replaceLines(lines))
 })
 
 ReactDOM.render((

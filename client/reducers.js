@@ -11,8 +11,10 @@ export const bets = (state = initState.bets, action) => {
 
 export const lines = (state = initState.lines, action) => {
   if (action.type === actions.ADD_LINE) {
-    console.log([...state.slice(-39), action.line])
     return [...state.slice(-39), action.line]
+  }
+  if (action.type === actions.REPLACE_LINES) {
+    return [...action.lines.slice(-39)]
   }
   return state
 }

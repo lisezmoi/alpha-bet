@@ -15,20 +15,22 @@ const io = socketio(server)
 const createPoemLines = () => {
   const poem = fs.readFileSync('poem.txt', 'utf8').split('\n')
   let index = 0
-  return () => poem[index = index > poem.length - 1? 0 : index + 1]
+  return () => poem[index > poem.length - 1? (index = 0) : index++]
 }
 const poemLine = createPoemLines()
 
+let history = []
 let i = 0
 const tick = () => {
-  // if (i++ > 5) return
-  setTimeout(tick, 500)
-  io.emit('text-line', { line: poemLine() })
+  setTimeout(tick, 1000)
+  const line = poemLine()
+  history = [...history.slice(-39), { line }]
+  io.emit('text-line', { line })
 }
 tick()
 
 io.on('connection', socket => {
-  // socket.emit('news', { hello: 'world' })
+  socket.emit('text-history', history)
   console.log('A user connected!')
 })
 
