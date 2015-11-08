@@ -30,11 +30,11 @@ const Users = props => (
             {user.face}
           </span>
           {' '}
-          <span className='letter'>
-            A
-          </span>
+          {user.bets.map(bet => (
+            <span className='letter'>{bet}</span>
+          ))}
           {' '}
-          <span className='score'>$200</span>
+          <span className='score'>${user.amount}</span>
         </li>
       )
     })}

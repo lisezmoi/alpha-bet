@@ -34,15 +34,22 @@ tick()
 io.on('connection', socket => {
   console.log('Hi ' + socket.id)
 
+  // Emit the updated list of users
   io.emit('users', users.add(socket.id))
 
+  // Emit the history
   socket.emit('text-history', history)
+
   socket.on('start-bet', letter => {
     console.log(`${socket.id} started a bet on ${letter}`)
+    io.emit('users', users.addBet(socket.id, letter))
   })
+
   socket.on('end-bet', letter => {
     console.log(`${socket.id} ended a bet on ${letter}`)
+    io.emit('users', users.rmBet(socket.id, letter))
   })
+
   socket.on('disconnect', () => {
     console.log('Bye ' + socket.id)
     io.emit('users', users.rm(socket.id))

@@ -14,7 +14,7 @@ const FACES = [
   '[ ¤_¤]',
   '( •᷄⌓•᷅ )',
   '૮(‘▱๋’ )',
-  ]
+]
 
 const randomFace = () => (
   FACES[Math.floor(Math.random() * FACES.length)]
@@ -43,10 +43,26 @@ module.exports = () => {
     }
     return users
   }
+  const addBet = (id, letter) => {
+    const user = get(id)
+    if (user && user.bets.indexOf(letter) === -1) {
+      user.bets.push(letter)
+    }
+    return users
+  }
+  const rmBet = (id, letter) => {
+    const user = get(id)
+    if (user && user.bets.indexOf(letter) > -1) {
+      user.bets.splice(user.bets.indexOf(letter), 1)
+    }
+    return users
+  }
   return {
     get: get,
     add: add,
     rm: rm,
     users: users,
+    addBet: addBet,
+    rmBet: rmBet,
   }
 }
