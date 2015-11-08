@@ -58,29 +58,20 @@ html, body, main, .main-in, .app-container
 @keyframes userBlop
   0%
     box-shadow 0 0 0 transparent
-    background transparent
-    color userColor
   10%
     box-shadow 0 0 0 20px userColor
-    background userColor
-    color white
   100%
     box-shadow 0 0 0px transparent
-    background transparent
-    color userColor
 @keyframes blop
   0%
     box-shadow 0 0 0 transparent
-    background transparent
-    color black
+
   1%
     box-shadow 0 0 0 10px rgba(0,0,0,.2)
-    background rgba(0,0,0,.2)
-    color white
+
   100%
     box-shadow 0 0 0px transparent
-    background transparent
-    color black
+
 
 .Sidebar
   flex 0 0 350px
@@ -198,7 +189,7 @@ html, body, main, .main-in, .app-container
       background #f1f1f1
       border-radius r
       padding 2px
-      width 5em
+      width 6em
       text-align center
       display inline-block
       white-space nowrap
@@ -209,8 +200,8 @@ html, body, main, .main-in, .app-container
       margin-right 2px
       font-weight bold
       border-radius r
-      transition all 0.9s ease
-      box-shadow 0 0 0 0px #555
+      animation-duration .1s
+      animation-name appearLetter
     &.me
       .user-icon
         color userColor
@@ -218,11 +209,11 @@ html, body, main, .main-in, .app-container
         box-shadow 0 0 0 0px userColor
         background-color userColor
         border-color userColor
-  &.highlight
-    .me
-      .letter
-        box-shadow 0 0 0 30px transparent
-
+@keyframes appearLetter
+  0%
+    font-size 0
+  100%
+    font-size inherit
 .logo
   position absolute
   bottom m
@@ -259,7 +250,7 @@ a
 
 .support
   position absolute
-  bottom m
+  bottom 25px
   left m
   filter hue-rotate(134deg) saturate(315%)
   transition filter .1s ease
