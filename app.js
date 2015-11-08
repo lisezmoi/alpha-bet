@@ -42,6 +42,9 @@ tick()
 io.on('connection', socket => {
   console.log('Hi ' + socket.id)
 
+  // Emit the user id
+  io.emit('user-id', socket.id)
+
   // Emit the updated list of users
   io.emit('users', users.add(socket.id))
 

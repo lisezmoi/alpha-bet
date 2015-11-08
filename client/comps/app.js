@@ -8,6 +8,7 @@ import Footer from './footer'
 
 
 const stateToProps = state => ({
+  userId: state.userId,
   users: state.users,
   lines: state.lines,
   aboutOpened: state.aboutOpened,
@@ -45,6 +46,7 @@ class App extends React.Component {
             onStartBet={props.onStartBet}
             onEndBet={props.onEndBet}
             users={props.users}
+            userId={props.userId}
           />
         </div>
         <About

@@ -1,11 +1,19 @@
 import * as actions from './action-creators'
 
 const istate = {
+  userId: null,
   users: [],
   bets: [],
   lines: [],
   aboutOpened: false,
   pressedLetter: null,
+}
+
+export const userId = (state = istate.userId, action) => {
+  if (action.type === actions.UPDATE_USER_ID) {
+    return action.userId
+  }
+  return state
 }
 
 export const pressedLetter = (state = istate.pressedLetter, action) => {

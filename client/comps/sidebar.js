@@ -12,6 +12,7 @@ const Sidebar = props => (
     />
     <h2>Participants</h2>
     <Users
+      userId={props.userId}
       users={props.users}
     />
   </div>
