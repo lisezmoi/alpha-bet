@@ -17,7 +17,8 @@
     "postinstall": "node scripts/postinstall.js",
     "build": "webpack",
     "build-prod": "webpack -p",
-    "watch": "webpack-dev-server --port 3000 --progress --content-base public/"
+    "watch": "webpack-dev-server --port 3000 --progress --content-base public/",
+    "watch-css": "stylus -I ./node_modules/nib/lib --watch ./public/css/main.styl --out ./public/dist"
   },
   "devDependencies": {
     "babel": "^6.0.15",
@@ -27,6 +28,8 @@
     "babel-preset-react": "^6.1.2",
     "babel-runtime": "^6.0.14",
     "extract-text-webpack-plugin": "^0.9.1",
+    "nib": "^1.1.0",
+    "stylus": "^0.52.4",
     "webpack": "^1.12.3",
     "webpack-dev-server": "^1.12.1"
   }

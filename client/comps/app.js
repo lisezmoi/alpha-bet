@@ -2,9 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import * as actionCreators from '../action-creators'
 
-import Header from './header'
 import Main from './main'
-import Footer from './footer'
+import Sidebar from './sidebar'
 
 class App extends React.Component {
   render() {
@@ -12,11 +11,10 @@ class App extends React.Component {
     const { dispatch } = props
     return (
       <div className='App'>
-        <Header />
         <Main
           lines={props.lines}
         />
-        <Footer />
+        <Sidebar />
       </div>
     )
   }

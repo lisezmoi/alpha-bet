@@ -5,13 +5,9 @@ html, body, #app-container {
 }
 .App {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: nowrap;
   height: 100%;
-}
-.Header {
-  flex: 0 0 100px;
-  background: #666;
 }
 .Main {
   flex: 0 1 100%;
@@ -26,7 +22,7 @@ html, body, #app-container {
   flex: 0 0 auto;
   padding: 10px;
 }
-.Footer {
-  flex: 0 0 100px;
+.Sidebar {
+  flex: 0 0 350px;
   background: #666;
 }

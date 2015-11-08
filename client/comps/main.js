@@ -1,4 +1,5 @@
 import React from 'react'
+import Logo from './logo'
 
 const Main = props => (
   <div className='Main'>
@@ -9,6 +10,7 @@ const Main = props => (
       </div>
     ))}
     </div>
+    <Logo />
   </div>
 )
 

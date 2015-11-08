@@ -10,7 +10,7 @@ import * as actions from './action-creators'
 const store = createStore(combineReducers(reducers))
 
 store.subscribe(() => {
-  console.log(store.getState())
+  // console.log(store.getState())
 })
 
 const socket = io.connect()
@@ -24,4 +24,4 @@ ReactDOM.render((
   <Provider store={store}>
     <App />
   </Provider>
-), document.querySelector('#app-container'))
+), document.querySelector('main'))

@@ -1,0 +1,253 @@
+@import 'nib/vendor'
+@import 'nib/gradients'
+@import 'utils.styl'
+
+m = 20px // padding
+r = 1em // radius
+userColor = red
+
+body
+  font 16px/1.8em 'cmutl', monospace
+
+html, body, main, .chart-letters-users, .app-container
+  height 100%
+
+::selection
+  background transparent
+::-moz-selection
+  background transparent
+
+.App
+  height 100%
+  display flex
+  flex-direction row
+  flex-wrap nowrap
+  justify-content center
+  align-content stretch
+  align-items stretch
+.Main
+  position relative
+  overflow hidden
+  flex 0 1 100%
+  display flex
+  padding 20px
+  flex-direction column
+  flex-wrap nowrap
+  justify-content flex-end
+  border-right 1px solid #ccc
+
+.Main-lines
+  flex 0 0 auto
+  padding 10px
+.Sidebar
+  flex 0 0 350px
+.Logo
+  position absolute
+  bottom m
+  right 0
+  width 100%
+  display block
+  text-align center
+  h1
+    display inline
+    font-size 20px
+    color #888
+  .Logo-about
+    margin-left 10px
+    cursor pointer
+    color white
+    background #aaa
+    padding 0.25em 0.45em 0 0.45em
+    border-radius r
+    font-weight bold
+    position relative
+    top -2px
+    &:hover
+      background userColor
+
+.Letters
+  flex 0 0 auto
+  flex-wrap wrap
+  justify-content flex-start
+  align-content flex-start
+  align-self auto
+  padding 20px
+  flex-direction row
+  display flex
+  align-items stretch
+  & > span
+    cursor pointer
+    font-size 30px
+    height 1.4em
+    margin .1em
+    background #ccc
+    border-radius r
+    padding 0.3em 0.45em 0 0.45em
+    transition background-color .1s ease-out
+    &:hover
+      background #eee
+    &:active
+      background userColor
+      color white
+.Letters-letter-blank
+  visibility hidden
+
+.flex-parent
+  flex-direction row
+  &.chart-letters-users
+    flex 1 0 auto
+    padding 0
+  &.letters-users
+    flex-direction column
+    flex 0 0 350px
+    padding 0
+    justify-content flex-start
+
+.flex-child
+  flex 1 1 auto
+  align-self auto
+  padding m
+  &.charts-text
+    position relative
+    border-right 1px solid #ccc
+    flex-direction column
+    .txt-stream
+      position absolute
+      top 0
+      left 0
+      width 100%
+      .txt-stream-inner
+        line-height 4vh
+        width 660px
+        margin 0 auto
+        white-space pre
+        .letter-bet
+          color userColor
+          box-shadow 0 0 0 0px userColor
+          transition box-shadow 0.7s ease-out
+        .letter-blop
+          background userColor
+          border 5px solid userColor
+          border-radius r
+        .last-line
+          background userColor
+          color white
+          padding 0 5px
+          position relative
+          left -5px
+          border-radius r
+          .letter-bet
+            color white
+            box-shadow 0 0 0 10px transparent
+            border-radius r
+    .chart
+      flex 1 0 auto
+      // background url(../img/chart.svg) no-repeat
+      background-size 100% 100%
+      .letter
+        background userColor
+        color white
+        padding 0.1em 0.4em 0 0.4em
+        border-radius r
+
+  &.user-list
+    font-size 16px
+    li
+      margin-bottom 20px
+      .user-icon
+        color #555
+        background #f1f1f1
+        border 5px solid #f1f1f1
+        border-radius r
+      .letter
+        background black
+        color white
+        padding 0.1em 0.4em 0 0.4em
+        border-radius r
+      &.myself
+        .user-icon
+          color userColor
+        .letter
+          background-color userColor
+          border-color userColor
+  &.letter-list
+    flex 0 0 auto
+    flex-wrap wrap
+    justify-content flex-start
+    align-content flex-start
+    .letter
+      cursor pointer
+      font-size 30px
+      height 1.4em
+      margin .1em
+      background #ccc
+      border-radius r
+      padding 0.3em 0.45em 0 0.45em
+      transition background-color .1s ease-out
+      &:hover
+        background #eee
+      &:active
+        background userColor
+        color white
+      &.blank
+        color transparent
+        background transparent
+
+.logo
+  position absolute
+  bottom m
+  right 0
+  width 100%
+  display block
+  text-align center
+  h1
+    display inline
+    font-size 20px
+    color #888
+  .about-button
+    margin-left 10px
+    cursor pointer
+    color white
+    background #aaa
+    padding 0.25em 0.45em 0 0.45em
+    border-radius r
+    font-weight bold
+    position relative
+    top -2px
+    &:hover
+      background userColor
+#about
+  transistion all 0.8s linear
+  position absolute
+  display none
+  background userColor
+  padding 20vh
+  font-size 30px
+  line-height 2.5em
+  text-align center
+  color white
+  bottom 10%
+  top 10%
+  left 10%
+  right 10%
+  .about-button
+    position absolute
+    right m
+    top 0
+    color white
+    cursor pointer
+  &.opened
+    display block
+
+h2
+  flex 0 0 auto
+  border-bottom 1px solid #ccc
+  font-size 14px
+  color #999
+  padding 0 m
+
+a
+  color inherit
+
+.letter::selection {background:transparent;}
+.letter::-moz-selection {background:transparent;}
