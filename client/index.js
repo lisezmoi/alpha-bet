@@ -8,11 +8,6 @@ import * as reducers from './reducers'
 import * as actions from './action-creators'
 
 const store = createStore(combineReducers(reducers))
-
-store.subscribe(() => {
-  // console.log(store.getState())
-})
-
 const socket = io.connect()
 
 socket.on('text-line', line => {

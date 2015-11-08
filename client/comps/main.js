@@ -10,7 +10,9 @@ const Main = props => (
       </div>
     ))}
     </div>
-    <Logo />
+    <Logo
+      onToggleAbout={props.onToggleAbout}
+    />
   </div>
 )
 

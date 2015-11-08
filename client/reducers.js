@@ -3,6 +3,15 @@ import * as actions from './action-creators'
 const initState = {
   bets: [],
   lines: [],
+  aboutOpened: false,
+}
+
+export const aboutOpened = (state = initState.aboutOpened, action) => {
+  if (action.type === actions.TOGGLE_ABOUT) {
+    console.log('??')
+    return !state
+  }
+  return state
 }
 
 export const bets = (state = initState.bets, action) => {
