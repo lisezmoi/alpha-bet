@@ -43,24 +43,49 @@ html, body, main, .main-in, .app-container
   white-space pre
   .letter
     border-radius r
-    transition all 0.8s ease
     &.letter-current
       color userColor
-      box-shadow 0 0 0 0px transparent
-      background transparent
-    &.letter-other
-      box-shadow 0 0 0 0px transparent
-      transition all 0.3s ease
   .line:last-child
     .letter
-      background transparent
       &.letter-current
-        box-shadow 0 0 0 2px u serColor
-        background userColor
+        animation-duration .5s
+        animation-name userBlop
       &.letter-other
+        animation-duration .4s
+        animation-name blop
         color black
+
+@keyframes userBlop
+  0%
+    box-shadow 0 0 0 transparent
+    background transparent
+    color userColor
+  10%
+    box-shadow 0 0 0 20px userColor
+    background userColor
+    color white
+  100%
+    box-shadow 0 0 0px transparent
+    background transparent
+    color userColor
+@keyframes blop
+  0%
+    box-shadow 0 0 0 transparent
+    background transparent
+    color black
+  1%
+    box-shadow 0 0 0 10px rgba(0,0,0,.2)
+    background rgba(0,0,0,.2)
+    color white
+  100%
+    box-shadow 0 0 0px transparent
+    background transparent
+    color black
+
 .Sidebar
   flex 0 0 350px
+  display flex
+  flex-direction column
 .Logo
   position absolute
   bottom m
@@ -70,14 +95,14 @@ html, body, main, .main-in, .app-container
   text-align center
   h1
     display inline
-    font-size 20px
-    color #888
+    font-size 22px
+    color black
   .Logo-about
     margin-left 10px
     font-size 12px
     cursor pointer
     color white
-    background #aaa
+    background #999
     padding 0.25em 0.45em 0 0.45em
     border-radius r
     font-weight bold
@@ -238,19 +263,38 @@ a
   left m
   filter hue-rotate(134deg) saturate(315%)
   transition filter .1s ease
-  &:hover
-    filter none
+  &.mobile
+    display none
 
-@keyframes bet
-  0%
-    box-shadow 0 0 0 black
-    transform scale(1.2)
-  50%
-    box-shadow 0 0 10px black
-    transform scale(1.5)
-  100%
-    box-shadow 0 0 0px black
-    transform scale(1.2)
+@media only screen and (max-width: 800px)
+  .About
+    font-size 20px
+    padding 20vh m m m
+  .support, .Logo h1, .Letters-letter-blank
+    display none
+  .Logo
+    top m
+    .Logo-about
+      font-size 30px
+  .support.mobile
+    display inline
+  .App
+    flex-flow column
+  .Main
+    flex-flow row
+    .Main-lines
+      width 100%
+  .Sidebar
+    Flex 0 0 auto
+  .Users
+    li
+      display inline
+  .Letters
+    order 3
+  h2.title-users
+    order 0
+  h2.title-letters
+    order 2
 
 
 .letter::selection {background:transparent;}
