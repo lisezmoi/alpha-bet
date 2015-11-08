@@ -1,3 +1,5 @@
+'use strict'
+
 const FACES = [
   '( >д< )',
   '( ;¬_¬)',
@@ -41,38 +43,48 @@ module.exports = () => {
   const get = id => (
     users.find(user => user.id === id)
   )
-  const add = id => {
-    if (!get(id)) {
+  const getAllUsers = () => users.map(user => ({
+    id: user.id,
+    bets: user.bets,
+    face: user.face,
+    amount: user.amount,
+  }))
+  const add = socket => {
+    if (!get(socket.id)) {
       users.push({
-        id: id,
+        id: socket.id,
+        socket: socket,
         bets: [],
         face: randomFace(),
         amount: 100,
+        betHistory: []
       })
     }
-    return users
+    return usersApi
   }
   const rm = id => {
     const user = get(id)
     if (user) {
       users.splice(users.indexOf(user), 1)
     }
-    return users
+    return usersApi
   }
   const addBet = (id, letter) => {
     const user = get(id)
     if (user && user.bets.indexOf(letter) === -1) {
       // user.bets.push(letter)
       user.bets = [letter]
+      user.betHistory = []
     }
-    return users
+    return usersApi
   }
   const rmBet = (id, letter) => {
     const user = get(id)
     if (user && user.bets.indexOf(letter) > -1) {
       user.bets.splice(user.bets.indexOf(letter), 1)
+      user.betHistory = []
     }
-    return users
+    return usersApi
   }
   const getAllBets = () => users.reduce((allBets, user, i) => {
     user.bets.forEach(letter => {
@@ -90,25 +102,34 @@ module.exports = () => {
       o[letter] += 1
       return o
     }, {})
-    return users.map(user => {
-      user.amount = user.bets.reduce((amount, bet) => {
+    users.forEach(user => {
+      const diff = user.bets.reduce((amount, bet) => {
         if (!lineStats[bet]) return amount - Math.random() * 2
         const appearsEvery = freqs.total / freqs.letters[bet]
         const expectedFrequency = lineLen / appearsEvery
         const frequency = lineStats[bet]
         const frequencyScore = frequency / expectedFrequency
+        let diff = 0
         if (frequencyScore < 1) {
-          return amount + (frequencyScore / 50)
+          diff = frequencyScore / 50
+        } else if (frequencyScore < 10) {
+          diff = frequencyScore
+        } else {
+          diff = Math.pow(frequencyScore, 0.7)
         }
-        if (frequencyScore < 10) {
-          return amount + frequencyScore
-        }
-        return amount + Math.pow(frequencyScore, 0.7)
-      }, user.amount)
-      return user
+        return amount + diff
+      }, 0)
+
+      // Update the user object
+      if (diff !== 0) {
+        user.amount = user.amount + diff
+        user.betHistory.unshift(diff)
+        user.betHistory = user.betHistory.slice(0, 40)
+      }
     })
+    return usersApi
   }
-  return {
+  const usersApi = {
     get: get,
     add: add,
     rm: rm,
@@ -116,6 +137,8 @@ module.exports = () => {
     addBet: addBet,
     rmBet: rmBet,
     getAllBets: getAllBets,
+    getAllUsers: getAllUsers,
     updateAmounts: updateAmounts,
   }
+  return usersApi
 }

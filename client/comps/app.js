@@ -6,13 +6,13 @@ import Sidebar from './sidebar'
 import About from './about'
 import Footer from './footer'
 
-
 const stateToProps = state => ({
   userId: state.userId,
   users: state.users,
   lines: state.lines,
   aboutOpened: state.aboutOpened,
   pressedLetter: state.pressedLetter,
+  betHistory: state.betHistory,
 })
 
 class App extends React.Component {
@@ -38,6 +38,7 @@ class App extends React.Component {
       <div className='main-in'>
         <div className='App'>
           <Main
+            betHistory={props.betHistory}
             lines={props.lines}
             userId={props.userId}
             onToggleAbout={this.toggleAbout.bind(this)}

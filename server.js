@@ -49,7 +49,13 @@ const tick = () => {
   const line = poemLine()
   history = [...history.slice(-39), line]
   io.emit('text-line', line)
-  io.emit('users', users.updateAmounts(line, freqs))
+  io.emit('users', users.updateAmounts(line, freqs).getAllUsers())
+
+  users.users.forEach(user => {
+    user.socket.emit('bet-history', user.betHistory)
+  })
+
+  io.emit('history', users.updateAmounts(line, freqs).getAllUsers())
 }
 tick()
 
@@ -60,24 +66,24 @@ io.on('connection', socket => {
   socket.emit('user-id', socket.id)
 
   // Broadcast the updated list of users
-  io.emit('users', users.add(socket.id))
+  io.emit('users', users.add(socket).getAllUsers())
 
   // Emit the history
   socket.emit('text-history', history)
 
   socket.on('start-bet', letter => {
     console.log(`${socket.id} started a bet on ${letter}`)
-    io.emit('users', users.addBet(socket.id, letter))
+    io.emit('users', users.addBet(socket.id, letter).getAllUsers())
   })
 
   socket.on('end-bet', letter => {
     console.log(`${socket.id} ended a bet on ${letter}`)
-    io.emit('users', users.rmBet(socket.id, letter))
+    io.emit('users', users.rmBet(socket.id, letter).getAllUsers())
   })
 
   socket.on('disconnect', () => {
     console.log('Bye ' + socket.id)
-    io.emit('users', users.rm(socket.id))
+    io.emit('users', users.rm(socket.id).getAllUsers())
   })
 })
 
