@@ -62,7 +62,8 @@ module.exports = () => {
   const addBet = (id, letter) => {
     const user = get(id)
     if (user && user.bets.indexOf(letter) === -1) {
-      user.bets.push(letter)
+      // user.bets.push(letter)
+      user.bets = [letter]
     }
     return users
   }
