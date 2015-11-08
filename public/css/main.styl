@@ -179,7 +179,7 @@ html, body, main, .main-in, .app-container
     border-radius r
 
 .Users
-  flex 0 0 auto
+  flex 1 0 0
   align-self auto
   padding 20px
   flex-direction column
@@ -187,72 +187,47 @@ html, body, main, .main-in, .app-container
   align-items stretch
   font-size 16px
   overflow-y auto
-  min-height 0
-  li
-    margin-bottom 10px
-    height 30px
-    .user-icon
-      color #555
-      background #f1f1f1
-      border-radius r
-      padding 2px
-      width 6em
-      text-align center
-      display inline-block
-      white-space nowrap
-    .letter
-      background black
-      color white
-      padding 0.25em 0.45em .15em
-      margin-right 2px
-      font-weight bold
-      border-radius r
-      animation-duration .1s
-      animation-name appearLetter
-    .coin
-      margin-right 1px
-      font-size 20px
-      color #888
-      position relative
-      display inline-block
-      &.up
-        animation-duration 1s
-        animation-name coinup
-    .float:last-child
-      font-size 12px
-      color #777
-
-    &.me
+  .inner
+    li
+      margin-bottom 10px
+      height 30px
       .user-icon
-        color userColor
+        color #555
+        background #f1f1f1
+        border-radius r
+        padding 2px
+        width 6em
+        text-align center
+        display inline-block
+        white-space nowrap
       .letter
-        box-shadow 0 0 0 0px userColor
-        background-color userColor
-        border-color userColor
-
-.logo
-  position absolute
-  bottom m
-  right 0
-  width 100%
-  display block
-  text-align center
-  h1
-    display inline
-    font-size 20px
-    color #888
-  .about-button
-    margin-left 10px
-    cursor pointer
-    color white
-    background #aaa
-    padding 0.25em 0.45em 0 0.45em
-    border-radius r
-    font-weight bold
-    position relative
-    top -2px
-    &:hover
-      background userColor
+        background black
+        color white
+        padding 0.25em 0.45em .15em
+        margin-right 2px
+        font-weight bold
+        border-radius r
+        animation-duration .1s
+        animation-name appearLetter
+      .coin
+        margin-right 1px
+        font-size 20px
+        color #888
+        position relative
+        display inline-block
+        &.up
+          animation-duration 1s
+          animation-name coinup
+      .float:last-child
+        font-size 12px
+        color #777
+      &.me
+        .user-icon
+          color userColor
+        .letter
+          box-shadow 0 0 0 0px userColor
+          background-color userColor
+          border-color userColor
 
 h2
   flex 0 0 auto
