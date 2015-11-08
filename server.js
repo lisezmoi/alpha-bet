@@ -7,32 +7,45 @@ const socketio = require('socket.io')
 
 const PROD = process.env.NODE_ENV === 'production'
 const ASSETS_BASE = PROD? '/' : 'http://localhost:3000/'
+const TICK_DELAY = 500
 
 const app = express()
 const server = http.Server(app)
 const io = socketio(server)
 
+const freqs = JSON.parse(fs.readFileSync('frequencies.json', 'utf8'))
+
 const users = require('./server/users')()
 
 const createPoemLines = () => {
-  const poem = fs.readFileSync('poem.txt', 'utf8').split('\n')
+  const poem = fs.readFileSync('poem.txt', 'utf8')
+                 .split('\n').filter(line => line.trim())
   let index = 0
-  return () => poem[index > poem.length - 1? (index = 0) : index++]
+  return () => {
+    index = index >= poem.length - 1? 0 : index + 1
+    return {
+      content: poem[index],
+      index: index,
+    }
+  }
 }
 const poemLine = createPoemLines()
 
 let history = []
 let i = 0
 const tick = () => {
-  setTimeout(tick, 1000)
+  setTimeout(tick, TICK_DELAY)
   const line = poemLine()
-  history = [...history.slice(-39), { line }]
-  io.emit('text-line', { line })
+  history = [...history.slice(-39), line]
+  io.emit('text-line', line)
 }
 tick()
 
 io.on('connection', socket => {
   console.log('Hi ' + socket.id)
+
+  // Emit the user id
+  io.emit('user-id', socket.id)
 
   // Emit the updated list of users
   io.emit('users', users.add(socket.id))

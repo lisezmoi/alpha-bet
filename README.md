@@ -6,9 +6,10 @@ Alpha Bet is a game where letters become products you can bet on. Buy and sold a
 
 ## Installation
 
-    $ git clone git@github.com:bpierre/jaatc.git
-    $ cd jaatc
+    $ git clone git@github.com:lisezmoi/alpha-bet.git
+    $ cd alpha-bet
     $ npm install
+    $ npm run build-prod
 
 ## Launch
 

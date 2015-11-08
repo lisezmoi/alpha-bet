@@ -8,14 +8,28 @@ import Footer from './footer'
 
 
 const stateToProps = state => ({
+  userId: state.userId,
   users: state.users,
   lines: state.lines,
   aboutOpened: state.aboutOpened,
+  pressedLetter: state.pressedLetter,
 })
 
 class App extends React.Component {
+  componentDidMount() {
+    window.addEventListener('mouseup', () => {
+      const { props } = this
+      if (props.pressedLetter) {
+        props.onEndBet(props.pressedLetter)
+        props.dispatch(actions.pressLetter(null))
+      }
+    })
+  }
   toggleAbout() {
     this.props.dispatch(actions.toggleAbout())
+  }
+  pressLetter(letter) {
+    this.props.dispatch(actions.pressLetter(letter))
   }
   render() {
     const { props } = this
@@ -28,9 +42,11 @@ class App extends React.Component {
             onToggleAbout={this.toggleAbout.bind(this)}
           />
           <Sidebar
+            onPressLetter={this.pressLetter.bind(this)}
             onStartBet={props.onStartBet}
             onEndBet={props.onEndBet}
             users={props.users}
+            userId={props.userId}
           />
         </div>
         <About

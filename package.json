@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Our soon to be awesome entry for NKO2015. Let's make something amazing.",
   "author": "Node Knockout Team <all@nodeknockout.com>",
-  "main": "./app.js",
+  "main": "./server.js",
   "dependencies": {
     "express": "^4.13.3",
     "react": "^0.14.2",
@@ -23,7 +23,7 @@
     "webpack": "^1.12.3"
   },
   "scripts": {
-    "start": "node app.js",
+    "start": "node server.js",
     "postinstall": "node scripts/postinstall.js && npm run build-prod",
     "build-js": "webpack -p",
     "build-css": "stylus -I ./node_modules/nib/lib ./public/css/main.styl --out ./public/dist --compress",

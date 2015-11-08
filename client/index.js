@@ -18,6 +18,10 @@ socket.on('text-history', lines => {
   store.dispatch(actions.replaceLines(lines))
 })
 
+socket.on('user-id', userId => {
+  store.dispatch(actions.updateUserId(userId))
+})
+
 socket.on('users', users => {
   store.dispatch(actions.updateUsers(users))
 })
