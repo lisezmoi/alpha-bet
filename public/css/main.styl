@@ -51,7 +51,7 @@ html, body, main, .main-in, .app-container
   flex 0 0 auto
   width 100%
   line-height 1.5em
-  width 800px
+  width 900px
   margin 0 auto 50vh
   white-space pre
   .letter
@@ -65,7 +65,7 @@ html, body, main, .main-in, .app-container
         animation-name blop
         color black
       &.letter-current
-        animation-duration .5s
+        animation-duration .3s
         animation-name userBlop
         color userColor
 .Sidebar
@@ -180,7 +180,6 @@ html, body, main, .main-in, .app-container
   left 10%
   right 10%
 
-
 .End
   transition all .4s ease
   position absolute
@@ -200,7 +199,6 @@ html, body, main, .main-in, .app-container
   top 10%
   left 10%
   right 10%
-
 
 .Users
   flex 1 0 0
@@ -271,6 +269,11 @@ a
   transition filter .1s ease
   &.mobile
     display none
+  &.end
+    position static
+    background #888
+    filter none
+    filter saturate(0%)
 
 @media only screen and (max-width: 800px)
   .About
