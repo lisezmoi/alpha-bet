@@ -109,12 +109,13 @@ html, body, main, .main-in, .app-container
       border-radius r
       background #ccc
       padding 0.3em 0.4em 0.2em 0.42em
-      transition background-color .1s ease-out
+      transition background-color .3s ease
     &:hover span
-      background #eee
-    &:active span
       background userColor
       color white
+      transform scale(1.2)
+    &:active span
+      animation bet 4s infinite
 .Letters-letter-blank
   visibility hidden
 
@@ -171,8 +172,11 @@ html, body, main, .main-in, .app-container
     .user-icon
       color #555
       background #f1f1f1
-      border 5px solid #f1f1f1
       border-radius r
+      padding 2px
+      width 5em
+      text-align center
+      display inline-block
     .letter
       background black
       color white
@@ -231,6 +235,19 @@ a
   position absolute
   bottom m
   left m
+
+
+@keyframes bet
+  0%
+    box-shadow 0 0 0 black
+    transform scale(1.2)
+  50%
+    box-shadow 0 0 10px black
+    transform scale(1.5)
+  100%
+    box-shadow 0 0 0px black
+    transform scale(1.2)
+
 
 .letter::selection {background:transparent;}
 .letter::-moz-selection {background:transparent;}
