@@ -16,7 +16,12 @@ const Users = props => (
                 <span className='letter' key={i}>{bet.toUpperCase()}</span>
               ))}
               {' '}
-              <span className='score'><span class='coin'>●</span>{user.amount.toFixed(2)}</span>
+              <span className='score'>
+                <span className='coin'>●</span>
+                {user.amount.toFixed(2).split('.').map((p,i) => (
+                  <span className='float'>{(i === 0? '':'.') + p}</span>
+                ))}
+              </span>
             </li>
           )
         })}
