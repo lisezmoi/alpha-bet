@@ -111,11 +111,10 @@ html, body, main, .main-in, .app-container
       padding 0.3em 0.4em 0.2em 0.42em
       transition background-color .3s ease
     &:hover span
-      background userColor
-      color white
-      transform scale(1.2)
+      background #eee
     &:active span
-      animation bet 4s infinite
+      color white
+      background userColor
 .Letters-letter-blank
   visibility hidden
 
@@ -180,7 +179,8 @@ html, body, main, .main-in, .app-container
     .letter
       background black
       color white
-      padding 0.1em 0.44em
+      padding 0.25em 0.45em .15em
+      margin-right 2px
       font-weight bold
       border-radius r
       transition all 0.9s ease
@@ -235,7 +235,10 @@ a
   position absolute
   bottom m
   left m
-
+  filter hue-rotate(134deg) saturate(315%)
+  transition filter .1s ease
+  &:hover
+    filter none
 
 @keyframes bet
   0%
