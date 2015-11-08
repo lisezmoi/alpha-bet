@@ -18,7 +18,8 @@
     "build": "webpack",
     "build-prod": "webpack -p",
     "watch": "webpack-dev-server --port 3000 --progress --content-base public/",
-    "watch-css": "stylus -I ./node_modules/nib/lib --watch ./public/css/main.styl --out ./public/dist"
+    "watch-css": "stylus -I ./node_modules/nib/lib --watch ./public/css/main.styl --out ./public/dist",
+    "frequencies": "node scripts/letters-frequency > frequencies.json"
   },
   "devDependencies": {
     "babel": "^6.0.15",
