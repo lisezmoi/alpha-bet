@@ -278,23 +278,24 @@ main,
   -webkit-transition-property: background-color;
   -ms-transition-property: background-color;
   transition-property: background-color;
-  -moz-transition-duration: 0.1s;
-  -o-transition-duration: 0.1s;
-  -webkit-transition-duration: 0.1s;
-  -ms-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -moz-transition-timing-function: ease-out;
-  -o-transition-timing-function: ease-out;
-  -webkit-transition-timing-function: ease-out;
-  -ms-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  -webkit-transition-duration: 0.3s;
+  -ms-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -moz-transition-timing-function: ease;
+  -o-transition-timing-function: ease;
+  -webkit-transition-timing-function: ease;
+  -ms-transition-timing-function: ease;
+  transition-timing-function: ease;
 }
 .Letters > span:hover {
-  background: #eee;
-}
-.Letters > span:active {
   background: #f00;
   color: #fff;
+  transform: scale(1.2);
+}
+.Letters > span:active {
+  animation: bet 4s infinite;
 }
 .Letters-letter-blank {
   visibility: hidden;
@@ -371,8 +372,11 @@ main,
 .Users li .user-icon {
   color: #555;
   background: #f1f1f1;
-  border: 5px solid #f1f1f1;
   border-radius: 1em;
+  padding: 2px;
+  width: 5em;
+  text-align: center;
+  display: inline-block;
 }
 .Users li .letter {
   background: #000;
@@ -455,4 +459,60 @@ a {
 }
 .letter::-moz-selection {
   background: transparent;
+}
+@-moz-keyframes bet {
+  0% {
+    box-shadow: 0 0 0 #000;
+    transform: scale(1.2);
+  }
+  50% {
+    box-shadow: 0 0 10px #000;
+    transform: scale(1.5);
+  }
+  100% {
+    box-shadow: 0 0 0px #000;
+    transform: scale(1.2);
+  }
+}
+@-webkit-keyframes bet {
+  0% {
+    box-shadow: 0 0 0 #000;
+    transform: scale(1.2);
+  }
+  50% {
+    box-shadow: 0 0 10px #000;
+    transform: scale(1.5);
+  }
+  100% {
+    box-shadow: 0 0 0px #000;
+    transform: scale(1.2);
+  }
+}
+@-o-keyframes bet {
+  0% {
+    box-shadow: 0 0 0 #000;
+    transform: scale(1.2);
+  }
+  50% {
+    box-shadow: 0 0 10px #000;
+    transform: scale(1.5);
+  }
+  100% {
+    box-shadow: 0 0 0px #000;
+    transform: scale(1.2);
+  }
+}
+@keyframes bet {
+  0% {
+    box-shadow: 0 0 0 #000;
+    transform: scale(1.2);
+  }
+  50% {
+    box-shadow: 0 0 10px #000;
+    transform: scale(1.5);
+  }
+  100% {
+    box-shadow: 0 0 0px #000;
+    transform: scale(1.2);
+  }
 }

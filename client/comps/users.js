@@ -1,6 +1,22 @@
 import React from 'react'
 
-const users = ['pierre','raphaël','pierre','raphaël','pierre','raphaël','pierre','raphaël',]
+const users = [
+  '( >д< )',
+  '( ;¬_¬)',
+  '(ಠ ∩ ಠ)',
+  '<(`^´)>',
+  '┐(ﾟ～ﾟ)┌',
+  '╰|⊡_⊡|╯',
+  '|(ᗒᗣᗕ)|',
+  '[ ⊙～⊙]',
+  '(*’･Д･)',
+  '(||ﾟДﾟ}',
+  '\/\/ ･ั_･ั)',
+  '(_ŏ.ŏ)/',
+  '[ ¤_¤]',
+  '( •᷄⌓•᷅ )',
+  '૮(‘▱๋’ )',
+  ]
 
 const Users = props => (
   <div className='Users'>
