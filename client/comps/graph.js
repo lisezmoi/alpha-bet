@@ -27,9 +27,9 @@ const pathD = values => {
   return variations.reduce((d, val, i) => {
     const y = map(val, min, max, 125, 500 - 125)
     if (i === 0) {
-      return `M ${500 - 10 * i} ${y}`
+      return `M ${500} ${y}`
     }
-    return `${d} L ${500 - 10 * i} ${y}`
+    return `${d} L ${500 - 20 * i} ${y}`
   }, '')
 }
 
