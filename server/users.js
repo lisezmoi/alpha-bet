@@ -99,7 +99,10 @@ module.exports = () => {
         if (frequencyScore < 1) {
           return amount + (frequencyScore / 50)
         }
-        return amount + Math.pow(frequencyScore, 1.2)
+        if (frequencyScore < 10) {
+          return amount + frequencyScore
+        }
+        return amount + Math.pow(frequencyScore, 0.7)
       }, user.amount)
       return user
     })
