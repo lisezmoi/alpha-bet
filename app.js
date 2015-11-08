@@ -7,6 +7,7 @@ const socketio = require('socket.io')
 
 const PROD = process.env.NODE_ENV === 'production'
 const ASSETS_BASE = PROD? '/' : 'http://localhost:3000/'
+const TICK_DELAY = 500
 
 const app = express()
 const server = http.Server(app)
@@ -25,7 +26,7 @@ const poemLine = createPoemLines()
 let history = []
 let i = 0
 const tick = () => {
-  setTimeout(tick, 1000)
+  setTimeout(tick, TICK_DELAY)
   const line = poemLine()
   history = [...history.slice(-39), { line }]
   io.emit('text-line', { line })
