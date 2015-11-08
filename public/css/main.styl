@@ -37,35 +37,28 @@ html, body, main, .main-in, .app-container
 .Main-lines
   flex 0 0 auto
   width 100%
-  line-height 4vh
+  line-height 1.5em
   width 760px
-  margin 0 auto
+  margin 0 auto 50vh
   white-space pre
   .letter
     border-radius r
+    transition all 0.8s ease
     &.letter-current
       color userColor
-      transition all 0.8s ease
+      box-shadow 0 0 0 0px transparent
+      background transparent
     &.letter-other
+      box-shadow 0 0 0 0px transparent
       transition all 0.3s ease
-  .last-line
+  .line[data-reactid=".0.0.0.0.$39"]
     .letter
+      background transparent
       &.letter-current
-        color white
-        box-shadow 0 0 0 0px userColor
+        box-shadow 0 0 0 2px u serColor
         background userColor
       &.letter-other
-        color white
-        box-shadow 0 0 0 0px #555
-        background #555
-    &.highlight
-      .letter
-        box-shadow 0 0 0 20px transparent
-        background transparent
-        &.letter-current
-          color userColor
-        &.letter-other
-          color black
+        color black
 .Sidebar
   flex 0 0 350px
 .Logo
@@ -81,6 +74,7 @@ html, body, main, .main-in, .app-container
     color #888
   .Logo-about
     margin-left 10px
+    font-size 12px
     cursor pointer
     color white
     background #aaa
@@ -119,6 +113,7 @@ html, body, main, .main-in, .app-container
       color white
 .Letters-letter-blank
   visibility hidden
+
 .About
   transition all .4s ease
   position absolute
@@ -165,6 +160,8 @@ html, body, main, .main-in, .app-container
   display flex
   align-items stretch
   font-size 16px
+  overflow-y auto
+  min-height 0
   li
     margin-bottom 20px
     .user-icon
@@ -225,6 +222,11 @@ h2
 
 a
   color inherit
+
+.support
+  position absolute
+  bottom m
+  left m
 
 .letter::selection {background:transparent;}
 .letter::-moz-selection {background:transparent;}

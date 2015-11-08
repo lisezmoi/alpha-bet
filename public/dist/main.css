@@ -166,16 +166,13 @@ main,
 .Main-lines {
   flex: 0 0 auto;
   width: 100%;
-  line-height: 4vh;
+  line-height: 1.5em;
   width: 760px;
-  margin: 0 auto;
+  margin: 0 auto 50vh;
   white-space: pre;
 }
 .Main-lines .letter {
   border-radius: 1em;
-}
-.Main-lines .letter.letter-current {
-  color: #f00;
   -moz-transition-property: all;
   -o-transition-property: all;
   -webkit-transition-property: all;
@@ -192,7 +189,13 @@ main,
   -ms-transition-timing-function: ease;
   transition-timing-function: ease;
 }
+.Main-lines .letter.letter-current {
+  color: #f00;
+  box-shadow: 0 0 0 0px transparent;
+  background: transparent;
+}
 .Main-lines .letter.letter-other {
+  box-shadow: 0 0 0 0px transparent;
   -moz-transition-property: all;
   -o-transition-property: all;
   -webkit-transition-property: all;
@@ -209,24 +212,14 @@ main,
   -ms-transition-timing-function: ease;
   transition-timing-function: ease;
 }
-.Main-lines .last-line .letter.letter-current {
-  color: #fff;
-  box-shadow: 0 0 0 0px #f00;
-  background: #f00;
-}
-.Main-lines .last-line .letter.letter-other {
-  color: #fff;
-  box-shadow: 0 0 0 0px #555;
-  background: #555;
-}
-.Main-lines .last-line.highlight .letter {
-  box-shadow: 0 0 0 20px transparent;
+.Main-lines .line[data-reactid=".0.0.0.0.$39"] .letter {
   background: transparent;
 }
-.Main-lines .last-line.highlight .letter.letter-current {
-  color: #f00;
+.Main-lines .line[data-reactid=".0.0.0.0.$39"] .letter.letter-current {
+  box-shadow: 0 0 0 2px u serColor;
+  background: #f00;
 }
-.Main-lines .last-line.highlight .letter.letter-other {
+.Main-lines .line[data-reactid=".0.0.0.0.$39"] .letter.letter-other {
   color: #000;
 }
 .Sidebar {
@@ -247,6 +240,7 @@ main,
 }
 .Logo .Logo-about {
   margin-left: 10px;
+  font-size: 12px;
   cursor: pointer;
   color: #fff;
   background: #aaa;
@@ -368,6 +362,8 @@ main,
   display: flex;
   align-items: stretch;
   font-size: 16px;
+  overflow-y: auto;
+  min-height: 0;
 }
 .Users li {
   margin-bottom: 20px;
@@ -448,6 +444,11 @@ h2 {
 }
 a {
   color: inherit;
+}
+.support {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
 }
 .letter::selection {
   background: transparent;

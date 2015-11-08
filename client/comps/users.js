@@ -1,7 +1,5 @@
 import React from 'react'
 
-// const users = ['pierre','raphaël']
-
 const Users = props => (
   <div className='Users'>
     <ul>
@@ -10,15 +8,6 @@ const Users = props => (
       const className = ''
       return (
         <li className={className}>
-          <span className='user-icon'>
-            {user.face}
-          </span>
-          {' '}
-          <span className='letter'>
-            A
-          </span>
-          {' '}
-          <span className='score'>$200</span>
         </li>
       )
     })}
