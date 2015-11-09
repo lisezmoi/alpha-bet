@@ -4,6 +4,10 @@
 
 Alpha Bet is a game where letters are products. Bet on it, receive money. You will have to buy and sell in time to defeat and beat the most talented letter gamblers on the Internet.
 
+## Sreenshot
+
+![Alpha Bet Screenshot](https://raw.githubusercontent.com/lisezmoi/alpha-bet/master/journal/2015-11-09%2000.18.59.png)
+
 ## Installation
 
     $ git clone git@github.com:lisezmoi/alpha-bet.git
