@@ -6,7 +6,7 @@ Alpha Bet is a game where letters are products. Bet on it, receive money. You wi
 
 ## Sreenshot
 
-![Alpha Bet Screenshot](https://raw.githubusercontent.com/lisezmoi/alpha-bet/master/journal/2015-11-09%2000.18.59.png)
+![Alpha Bet Screenshot](https://raw.githubusercontent.com/lisezmoi/alpha-bet/master/journal/animation-medium.gif)
 
 ## Installation
 
