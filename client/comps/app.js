@@ -35,7 +35,6 @@ class App extends React.Component {
   }
   render() {
     const { props } = this
-    const { dispatch } = props
     return (
       <div className='main-in'>
         <div className='App'>
